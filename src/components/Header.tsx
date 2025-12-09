@@ -6,9 +6,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#priorities", label: "Priorities" },
+    { href: "#voting", label: "Vote" },
     { href: "#news", label: "News" },
     { href: "#volunteer", label: "Volunteer" },
   ];
@@ -17,7 +17,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#home" className="font-heading text-lg md:text-xl font-semibold text-navy">
+          <a href="#" className="font-heading text-lg md:text-xl font-semibold text-navy hover:text-campaign-red transition-colors duration-300">
             Dr. Gena L. Ross
           </a>
 
@@ -27,7 +27,7 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-navy transition-colors"
+                className="relative text-sm font-medium text-foreground/80 hover:text-navy transition-colors duration-300 after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-campaign-red after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>

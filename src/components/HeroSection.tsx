@@ -24,24 +24,25 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#about">
-                <Button variant="campaign" size="lg">
-                  Learn About the Candidate
+                <Button variant="campaign" size="lg" className="group">
+                  <span>Learn About the Candidate</span>
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </Button>
               </a>
               <a href="#priorities">
-                <Button variant="campaign-outline" size="lg">
+                <Button variant="campaign-outline" size="lg" className="hover:scale-105 transition-transform duration-300">
                   County Responsibilities
                 </Button>
               </a>
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-campaign-red/20 to-navy/20 rounded-2xl blur-2xl"></div>
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-br from-campaign-red/20 to-navy/20 rounded-2xl blur-2xl group-hover:from-campaign-red/30 group-hover:to-navy/30 transition-all duration-500"></div>
               <img
                 src={candidateImage}
                 alt="Dr. Gena L. Ross"
-                className="relative w-full max-w-md rounded-2xl shadow-2xl object-cover aspect-[4/5]"
+                className="relative w-full max-w-md rounded-2xl shadow-2xl object-cover aspect-[4/5] group-hover:shadow-3xl group-hover:scale-[1.02] transition-all duration-500"
               />
             </div>
           </div>
