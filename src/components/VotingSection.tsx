@@ -97,7 +97,7 @@ const VotingSection = () => {
             </div>
             <div className="mt-6 pt-6 border-t border-border">
               <a
-                href="https://www.plattecountymo.gov/county-clerk"
+                href="https://www.co.platte.mo.us/county-clerk"
                 target="_blank"
                 rel="noopener noreferrer"
               >
