@@ -33,7 +33,7 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="https://example.com/donate"
+              href="https://secure.winred.com/ross-for-us-congress-mo-6/donate-today"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -68,7 +68,7 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="https://example.com/donate"
+                href="https://secure.winred.com/ross-for-us-congress-mo-6/donate-today"
                 target="_blank"
                 rel="noopener noreferrer"
               >
