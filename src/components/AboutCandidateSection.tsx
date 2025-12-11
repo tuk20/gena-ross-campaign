@@ -1,4 +1,4 @@
-import { GraduationCap, Briefcase, Target, Award, DollarSign, Users, BarChart3, Building2, Vote } from "lucide-react";
+import { GraduationCap, Briefcase, Target, Award, DollarSign, Users, BarChart3, Building2, Vote, User } from "lucide-react";
 
 const AboutCandidateSection = () => {
   const education = [
@@ -68,6 +68,20 @@ const AboutCandidateSection = () => {
         </div>
 
         <div className="max-w-5xl mx-auto space-y-8">
+          {/* Background */}
+          <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border-l-4 border-navy">
+            <h3 className="font-heading text-2xl font-semibold text-navy mb-4 flex items-center gap-3">
+              <User className="w-6 h-6 text-campaign-red" />
+              Background
+            </h3>
+            <p className="text-foreground/80 leading-relaxed text-lg">
+              Dr. Gena L. Ross has lived in Platte County for over 16 years and brings professional 
+              experience in education and public administration. Her background includes work in leadership, 
+              community involvement, and organizational management, providing insight into local issues 
+              and the needs of county operations.
+            </p>
+          </div>
+
           {/* Objective */}
           <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border-l-4 border-campaign-red">
             <h3 className="font-heading text-2xl font-semibold text-navy mb-4 flex items-center gap-3">
