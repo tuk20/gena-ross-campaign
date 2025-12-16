@@ -1,43 +1,16 @@
-import { useState, useEffect } from "react";
 import { MapPin, Calendar, ExternalLink, FileText, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/integrations/supabase/client";
 
-interface ElectionDate {
-  id: string;
-  event_name: string;
-  event_date: string;
-}
+const electionDates = [
+  { id: "1", event_name: "Filing Opens", event_date: "February 24, 2026" },
+  { id: "2", event_name: "Filing Closes", event_date: "March 31, 2026" },
+  { id: "3", event_name: "Primary Election", event_date: "August 4, 2026" },
+  { id: "4", event_name: "General Election", event_date: "November 3, 2026" },
+];
 
-interface SiteSetting {
-  key: string;
-  value: string;
-}
+const clerkUrl = "https://www.co.platte.mo.us/county-clerk";
 
 const VotingSection = () => {
-  const [electionDates, setElectionDates] = useState<ElectionDate[]>([]);
-  const [clerkUrl, setClerkUrl] = useState("https://www.co.platte.mo.us/county-clerk");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const [datesRes, settingsRes] = await Promise.all([
-        supabase.from("election_dates").select("id, event_name, event_date").order("display_order"),
-        supabase.from("site_settings").select("key, value").eq("key", "clerk_office_url").maybeSingle(),
-      ]);
-
-      if (datesRes.data) {
-        setElectionDates(datesRes.data);
-      }
-      if (settingsRes.data) {
-        setClerkUrl(settingsRes.data.value);
-      }
-      setLoading(false);
-    };
-
-    fetchData();
-  }, []);
-
   const votingResources = [
     {
       icon: MapPin,
@@ -116,24 +89,15 @@ const VotingSection = () => {
               </h3>
             </div>
             <div className="space-y-4">
-              {loading ? (
-                [1, 2].map((i) => (
-                  <div key={i} className="flex items-center justify-between p-4 rounded-lg bg-muted/50 animate-pulse">
-                    <div className="h-5 bg-muted rounded w-1/3" />
-                    <div className="h-5 bg-muted rounded w-1/4" />
-                  </div>
-                ))
-              ) : (
-                electionDates.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex items-center justify-between p-4 rounded-lg bg-muted/50 hover:bg-navy/5 transition-colors duration-300"
-                  >
-                    <span className="font-medium text-navy">{item.event_name}</span>
-                    <span className="text-campaign-red font-semibold">{item.event_date}</span>
-                  </div>
-                ))
-              )}
+              {electionDates.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center justify-between p-4 rounded-lg bg-muted/50 hover:bg-navy/5 transition-colors duration-300"
+                >
+                  <span className="font-medium text-navy">{item.event_name}</span>
+                  <span className="text-campaign-red font-semibold">{item.event_date}</span>
+                </div>
+              ))}
             </div>
             <div className="mt-6 pt-6 border-t border-border">
               <a

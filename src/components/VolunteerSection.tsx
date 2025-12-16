@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { Heart } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const VolunteerSection = () => {
   const { toast } = useToast();
@@ -47,38 +48,31 @@ const VolunteerSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/ross4plattecounty@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
+      const { data, error } = await supabase.functions.invoke("send-volunteer-email", {
+        body: {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          interests: formData.interests.join(", "),
+          interests: formData.interests,
           message: formData.message,
-          _subject: "New Volunteer Sign-up - Dr. Gena L. Ross Campaign",
-        }),
+        },
       });
 
-      if (response.ok) {
-        toast({
-          title: "Thank you for volunteering!",
-          description: "We'll be in touch soon.",
-        });
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          interests: [],
-          message: "",
-        });
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch {
+      if (error) throw error;
+
+      toast({
+        title: "Thank you for volunteering!",
+        description: "We'll be in touch soon.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        interests: [],
+        message: "",
+      });
+    } catch (error: any) {
+      console.error("Form submission error:", error);
       toast({
         title: "Submission Error",
         description: "Please try again or email us directly at ross4plattecounty@gmail.com",
