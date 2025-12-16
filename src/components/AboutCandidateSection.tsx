@@ -157,27 +157,6 @@ const AboutCandidateSection = () => {
             </div>
           </div>
 
-          {/* Key Skills */}
-          <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <h3 className="font-heading text-2xl font-semibold text-navy mb-6 flex items-center gap-3">
-              <Award className="w-6 h-6 text-campaign-red" />
-              Key Skills
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {skills.map((skill, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-center gap-3 p-4 rounded-lg bg-muted/50 hover:bg-navy/5 transition-all duration-300 hover:translate-x-1 group cursor-default"
-                >
-                  <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-campaign-red/10 transition-colors duration-300">
-                    <skill.icon className="w-5 h-5 text-navy group-hover:text-campaign-red transition-colors duration-300" />
-                  </div>
-                  <span className="text-foreground/80 text-sm leading-tight">{skill.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Political Experience */}
           <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border-l-4 border-navy">
             <h3 className="font-heading text-2xl font-semibold text-navy mb-4 flex items-center gap-3">
@@ -195,8 +174,37 @@ const AboutCandidateSection = () => {
                 Ran for Platte County School Board (2019)
               </div>
             </div>
-            <p className="mt-4 text-foreground/70 text-sm italic">
-              Gena Ross has registered with the Missouri Ethics Commission and will complete the filing as a candidate for Platte County Presiding Commissioner in February 2026.
+          </div>
+
+          {/* Areas of Expertise */}
+          <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <h3 className="font-heading text-2xl font-semibold text-navy mb-6 flex items-center gap-3">
+              <Award className="w-6 h-6 text-campaign-red" />
+              Areas of Expertise
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {skills.map((skill, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-center gap-3 p-4 rounded-lg bg-muted/50 hover:bg-navy/5 transition-all duration-300 hover:translate-x-1 group cursor-default"
+                >
+                  <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-campaign-red/10 transition-colors duration-300">
+                    <skill.icon className="w-5 h-5 text-navy group-hover:text-campaign-red transition-colors duration-300" />
+                  </div>
+                  <span className="text-foreground/80 text-sm leading-tight">{skill.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Filing Announcement */}
+          <div className="bg-gradient-to-r from-campaign-red/10 to-navy/10 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border-l-4 border-campaign-red">
+            <h3 className="font-heading text-2xl font-semibold text-navy mb-4 flex items-center gap-3">
+              <Award className="w-6 h-6 text-campaign-red" />
+              Filing Announcement
+            </h3>
+            <p className="text-foreground/80 leading-relaxed text-lg">
+              Dr. Gena L. Ross has officially registered with the Missouri Ethics Commission (MEC) and will complete the filing as a candidate for Platte County Presiding Commissioner in February 2026.
             </p>
           </div>
 
