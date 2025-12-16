@@ -197,17 +197,6 @@ const AboutCandidateSection = () => {
             </div>
           </div>
 
-          {/* Filing Announcement */}
-          <div className="bg-gradient-to-r from-campaign-red/10 to-navy/10 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border-l-4 border-campaign-red">
-            <h3 className="font-heading text-2xl font-semibold text-navy mb-4 flex items-center gap-3">
-              <Award className="w-6 h-6 text-campaign-red" />
-              Filing Announcement
-            </h3>
-            <p className="text-foreground/80 leading-relaxed text-lg">
-              Dr. Gena L. Ross has officially registered with the Missouri Ethics Commission (MEC) and will complete the filing as a candidate for Platte County Presiding Commissioner in February 2026.
-            </p>
-          </div>
-
           {/* Why This Office */}
           <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
             <h3 className="font-heading text-2xl font-semibold text-navy mb-4 group-hover:text-campaign-red transition-colors duration-300">
