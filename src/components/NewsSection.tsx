@@ -1,75 +1,30 @@
-import { useState, useEffect } from "react";
-import { Calendar, FileText, Bell, Megaphone, Star } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { Calendar, FileText, Megaphone } from "lucide-react";
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  "file-text": FileText,
-  "calendar": Calendar,
-  "bell": Bell,
-  "megaphone": Megaphone,
-  "star": Star,
-};
-
-interface NewsUpdate {
-  id: string;
-  title: string;
-  content: string;
-  date: string | null;
-  icon_type: string;
-}
+const newsUpdates = [
+  {
+    id: "1",
+    title: "Filing Announcement",
+    content: "Dr. Gena L. Ross has officially filed with the Missouri Ethics Commission to run for Platte County Presiding Commissioner in 2026.",
+    date: "2026",
+    icon: FileText,
+  },
+  {
+    id: "2",
+    title: "Public Meetings & Events",
+    content: "Stay tuned for upcoming community forums and public meetings where you can meet Dr. Ross and discuss issues important to Platte County.",
+    date: null,
+    icon: Calendar,
+  },
+  {
+    id: "3",
+    title: "Campaign Administrative Notices",
+    content: "For campaign updates and administrative information, please check back regularly or sign up as a volunteer to receive direct communications.",
+    date: null,
+    icon: Megaphone,
+  },
+];
 
 const NewsSection = () => {
-  const [updates, setUpdates] = useState<NewsUpdate[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const { data, error } = await supabase
-        .from("news_updates")
-        .select("id, title, content, date, icon_type")
-        .eq("is_published", true)
-        .order("display_order");
-
-      if (error) {
-        console.error("Error fetching news:", error);
-      } else if (data) {
-        setUpdates(data);
-      }
-      setLoading(false);
-    };
-
-    fetchNews();
-  }, []);
-
-  if (loading) {
-    return (
-      <section id="news" className="py-16 md:py-24 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-              News & Updates
-            </h2>
-            <div className="w-24 h-1 bg-campaign-red mx-auto"></div>
-          </div>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-background rounded-xl p-6 md:p-8 shadow-sm border border-border animate-pulse">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-muted rounded-full" />
-                  <div className="flex-1 space-y-3">
-                    <div className="h-6 bg-muted rounded w-1/3" />
-                    <div className="h-4 bg-muted rounded w-full" />
-                    <div className="h-4 bg-muted rounded w-2/3" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="news" className="py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
@@ -81,8 +36,8 @@ const NewsSection = () => {
         </div>
 
         <div className="max-w-3xl mx-auto space-y-6">
-          {updates.map((update) => {
-            const IconComponent = iconMap[update.icon_type] || FileText;
+          {newsUpdates.map((update) => {
+            const IconComponent = update.icon;
             return (
               <div
                 key={update.id}
@@ -111,12 +66,6 @@ const NewsSection = () => {
               </div>
             );
           })}
-
-          {updates.length === 0 && (
-            <div className="text-center py-8 text-muted-foreground">
-              No news updates at this time. Check back soon!
-            </div>
-          )}
         </div>
       </div>
     </section>
