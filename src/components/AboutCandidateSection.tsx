@@ -191,7 +191,13 @@ const AboutCandidateSection = () => {
               <div className="px-4 py-2 bg-navy/10 rounded-full text-navy font-medium hover:bg-campaign-red/10 hover:text-campaign-red transition-colors duration-300 cursor-default">
                 Ran for U.S. Senate
               </div>
+              <div className="px-4 py-2 bg-navy/10 rounded-full text-navy font-medium hover:bg-campaign-red/10 hover:text-campaign-red transition-colors duration-300 cursor-default">
+                Ran for Platte County School Board (2019)
+              </div>
             </div>
+            <p className="mt-4 text-foreground/70 text-sm italic">
+              Gena Ross has registered with the Missouri Ethics Commission and will complete the filing as a candidate for Platte County Presiding Commissioner in February 2026.
+            </p>
           </div>
 
           {/* Why This Office */}

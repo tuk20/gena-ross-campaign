@@ -47,7 +47,7 @@ const VolunteerSection = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/glross2026@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/ross4plattecounty@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const VolunteerSection = () => {
     } catch {
       toast({
         title: "Submission Error",
-        description: "Please try again or email us directly at glross2026@gmail.com",
+        description: "Please try again or email us directly at ross4plattecounty@gmail.com",
         variant: "destructive",
       });
     } finally {
