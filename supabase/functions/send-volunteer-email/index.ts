@@ -15,6 +15,18 @@ interface VolunteerFormData {
   message?: string;
 }
 
+// HTML escape function to prevent XSS attacks
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -26,6 +38,12 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Received volunteer form submission:", { name, email, phone, interests, message });
 
+    // Sanitize all user inputs
+    const safeName = escapeHtml(name || "");
+    const safeEmail = escapeHtml(email || "");
+    const safePhone = escapeHtml(phone || "");
+    const safeMessage = escapeHtml(message || "");
+
     const interestLabels: Record<string, string> = {
       "canvassing": "Door-to-door canvassing",
       "phone-banking": "Phone banking",
@@ -34,7 +52,11 @@ const handler = async (req: Request): Promise<Response> => {
       "other": "Other",
     };
 
-    const interestsList = interests.map(i => interestLabels[i] || i).join(", ") || "None specified";
+    // Sanitize interests - only allow known values
+    const safeInterests = (interests || [])
+      .filter(i => interestLabels[i])
+      .map(i => interestLabels[i])
+      .join(", ") || "None specified";
 
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -45,30 +67,30 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         from: "Dr. Gena L. Ross Campaign <onboarding@resend.dev>",
         to: ["ross4plattecounty@gmail.com"],
-        subject: `New Volunteer Sign-up: ${name}`,
+        subject: `New Volunteer Sign-up: ${safeName}`,
         html: `
           <h1>New Volunteer Sign-up</h1>
           <p>A new volunteer has signed up through the campaign website:</p>
           <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
             <tr>
               <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Name</td>
-              <td style="padding: 10px; border: 1px solid #ddd;">${name}</td>
+              <td style="padding: 10px; border: 1px solid #ddd;">${safeName}</td>
             </tr>
             <tr>
               <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Email</td>
-              <td style="padding: 10px; border: 1px solid #ddd;"><a href="mailto:${email}">${email}</a></td>
+              <td style="padding: 10px; border: 1px solid #ddd;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
             </tr>
             <tr>
               <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Phone</td>
-              <td style="padding: 10px; border: 1px solid #ddd;">${phone || "Not provided"}</td>
+              <td style="padding: 10px; border: 1px solid #ddd;">${safePhone || "Not provided"}</td>
             </tr>
             <tr>
               <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Areas of Interest</td>
-              <td style="padding: 10px; border: 1px solid #ddd;">${interestsList}</td>
+              <td style="padding: 10px; border: 1px solid #ddd;">${safeInterests}</td>
             </tr>
             <tr>
               <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Message</td>
-              <td style="padding: 10px; border: 1px solid #ddd;">${message || "No message provided"}</td>
+              <td style="padding: 10px; border: 1px solid #ddd;">${safeMessage || "No message provided"}</td>
             </tr>
           </table>
           <p style="margin-top: 20px; color: #666;">This email was sent from the campaign website volunteer form.</p>
