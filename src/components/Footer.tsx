@@ -21,7 +21,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-white/40 text-xs mt-6">
-            Paid for by the Committee to Elect Dr. Gena L. Ross
+            Paid for by the Committee to Elect Dr. Gena L. Ross — Treasurer Charlotte Hoverder
           </p>
         </div>
       </div>

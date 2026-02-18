@@ -201,7 +201,7 @@ const VolunteerSection = () => {
 
           <div className="text-center mt-8">
             <a
-              href="https://secure.winred.com/ross-for-us-congress-mo-6/donate-today"
+              href="https://secure.winred.com/dr-gena-ross-for-platte-county/donate-today"
               target="_blank"
               rel="noopener noreferrer"
             >
