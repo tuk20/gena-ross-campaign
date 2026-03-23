@@ -23,15 +23,15 @@ const HeroSection = () => {
               responsibilities related to this office.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#about">
+              <a href="#my-story">
                 <Button variant="campaign" size="lg" className="group">
-                  <span>Learn About the Candidate</span>
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  <span>Watch My Story</span>
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">▶</span>
                 </Button>
               </a>
-              <a href="#priorities">
+              <a href="#about">
                 <Button variant="campaign-outline" size="lg" className="hover:scale-105 transition-transform duration-300">
-                  County Responsibilities
+                  Learn About the Candidate
                 </Button>
               </a>
             </div>
