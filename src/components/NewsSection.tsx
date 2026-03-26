@@ -1,4 +1,4 @@
-import { Calendar, FileText, Megaphone } from "lucide-react";
+import { Calendar, FileText, Megaphone, Play } from "lucide-react";
 
 const newsUpdates = [
   {
@@ -36,6 +36,41 @@ const NewsSection = () => {
         </div>
 
         <div className="max-w-3xl mx-auto space-y-6">
+          {/* Featured PSA Video */}
+          <div className="bg-background rounded-xl overflow-hidden shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
+            <div className="p-6 md:p-8">
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-12 h-12 bg-campaign-red/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Play className="w-6 h-6 text-campaign-red" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                    <h3 className="font-heading text-xl font-semibold text-foreground">
+                      Public Service Announcement
+                    </h3>
+                    <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full w-fit">
+                      2026
+                    </span>
+                  </div>
+                  <p className="text-foreground/80 leading-relaxed">
+                    An important update from Dr. Gena L. Ross on her campaign for Platte County Presiding Commissioner.
+                  </p>
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden bg-black">
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full aspect-video"
+                >
+                  <source src="/videos/drgena1.mov" type="video/quicktime" />
+                  <source src="/videos/drgena1.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
           {newsUpdates.map((update) => {
             const IconComponent = update.icon;
             return (
