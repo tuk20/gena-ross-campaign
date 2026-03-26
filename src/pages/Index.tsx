@@ -9,10 +9,12 @@ import VotingSection from "@/components/VotingSection";
 import NewsSection from "@/components/NewsSection";
 import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
+import PSAVideoPopup from "@/components/PSAVideoPopup";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <PSAVideoPopup />
       <Header />
       <main>
         <HeroSection />
