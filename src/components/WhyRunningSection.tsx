@@ -59,7 +59,7 @@ const WhyRunningSection = () => {
         {/* Four Priorities Section */}
         <div className="max-w-4xl mx-auto mb-16">
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy text-center mb-10">
-            Four Priorities for Platte County
+            4 Priorities for Platte County
           </h3>
 
           <div className="space-y-10">
