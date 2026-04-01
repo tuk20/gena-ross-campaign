@@ -36,18 +36,18 @@ const WhyRunningSection = () => {
           <p className="text-foreground/80 leading-relaxed text-lg">
             We need leadership that:
           </p>
-          <ul className="space-y-2 text-foreground/80 text-lg max-w-4xl mx-auto">
+          <ul className="space-y-3 text-foreground text-lg font-semibold max-w-4xl mx-auto bg-muted/30 rounded-lg p-6">
             <li className="flex items-start">
-              <span className="text-campaign-red mr-2">•</span>
-              respects taxpayers
+              <span className="text-campaign-red mr-3 text-xl">•</span>
+              Respects taxpayers
             </li>
             <li className="flex items-start">
-              <span className="text-campaign-red mr-2">•</span>
-              plans for the future
+              <span className="text-campaign-red mr-3 text-xl">•</span>
+              Plans for the future
             </li>
             <li className="flex items-start">
-              <span className="text-campaign-red mr-2">•</span>
-              and makes decisions with the people—not without them
+              <span className="text-campaign-red mr-3 text-xl">•</span>
+              And makes decisions with the people—not without them
             </li>
           </ul>
 
@@ -59,7 +59,7 @@ const WhyRunningSection = () => {
         {/* Four Priorities Section */}
         <div className="max-w-4xl mx-auto mb-16">
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy text-center mb-10">
-            Four Priorities for Platte County
+            4 Priorities for Platte County
           </h3>
 
           <div className="space-y-10">
