@@ -4,7 +4,7 @@ const WhyRunningSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-campaign-red font-semibold text-lg mb-2">
-            Putting Taxpayers First.
+            Serving people, taxpayers first, leadership.
           </p>
           <p className="text-foreground/70 text-base max-w-2xl mx-auto">
             Responsible Leadership for Platte County.
@@ -19,106 +19,163 @@ const WhyRunningSection = () => {
 
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-            Why I'm Running
+            "Serving Platte County—Not for a Title, But for the People."
           </h2>
           <div className="w-24 h-1 bg-campaign-red mx-auto"></div>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6 mb-16">
           <p className="text-foreground/80 leading-relaxed text-lg">
-            I'm running for Platte County Presiding Commissioner because I believe county government should be responsible, transparent, and focused on the people it serves.
+            I'm Dr. Gena L. Ross, and I'm running because I believe county government should work for the people—not the other way around.
           </p>
 
           <p className="text-foreground/80 leading-relaxed text-lg">
-            As a Platte County resident and taxpayer, I see firsthand how county decisions affect families, businesses, and our quality of life. Those decisions should be made carefully, openly, and with respect for the people who fund county government.
+            Platte County is growing, and with that growth comes real challenges—higher costs, more traffic, and pressure on our communities.
           </p>
 
           <p className="text-foreground/80 leading-relaxed text-lg">
-            Throughout my career, I've worked in the real world—where budgets matter, accountability is expected, and trust is earned. Those same principles should guide county government. Residents deserve leadership that treats public dollars responsibly and makes thoughtful, well-reasoned decisions.
+            We need leadership that:
+          </p>
+          <ul className="space-y-2 text-foreground/80 text-lg max-w-4xl mx-auto">
+            <li className="flex items-start">
+              <span className="text-campaign-red mr-2">•</span>
+              respects taxpayers
+            </li>
+            <li className="flex items-start">
+              <span className="text-campaign-red mr-2">•</span>
+              plans for the future
+            </li>
+            <li className="flex items-start">
+              <span className="text-campaign-red mr-2">•</span>
+              and makes decisions with the people—not without them
+            </li>
+          </ul>
+
+          <p className="text-foreground/80 leading-relaxed text-lg">
+            This campaign is about putting people first, transparency first, and accountability first.
           </p>
         </div>
 
-        {/* Three Priorities Section */}
+        {/* Four Priorities Section */}
         <div className="max-w-4xl mx-auto mb-16">
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy text-center mb-10">
-            Three Priorities for Platte County
+            Four Priorities for Platte County
           </h3>
 
           <div className="space-y-10">
             {/* Priority 1 */}
             <div className="bg-muted/30 rounded-lg p-6 md:p-8">
               <h4 className="font-heading text-xl md:text-2xl font-bold text-navy mb-3">
-                1. Responsible Spending & Taxpayer Protection
+                1. Putting Taxpayers First
               </h4>
               <p className="text-foreground/70 mb-4">
-                County government must live within its means and respect household budgets.
+                "Putting taxpayers first" means more than just words.
               </p>
+              <p className="text-foreground/70 mb-2">It means:</p>
               <ul className="space-y-2 text-foreground/80">
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  Reduce waste and improve efficiency
+                  clear, transparent budgets
                 </li>
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  No property tax increases without voter approval
+                  responsible spending
                 </li>
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  Any tax questions placed only on November general election ballots, when participation is highest
-                </li>
-                <li className="flex items-start">
-                  <span className="text-campaign-red mr-2">•</span>
-                  Protect homeowners and working families
+                  and no surprises when it comes to taxes
                 </li>
               </ul>
+              <p className="text-foreground/70 mt-4">
+                You deserve to know where your money is going—and why.
+              </p>
             </div>
 
             {/* Priority 2 */}
             <div className="bg-muted/30 rounded-lg p-6 md:p-8">
               <h4 className="font-heading text-xl md:text-2xl font-bold text-navy mb-3">
-                2. Accountability & Transparency
+                2. Smart Growth & Planning
               </h4>
               <p className="text-foreground/70 mb-4">
-                Good government depends on trust and clear decision-making.
+                Growth is already impacting Platte County—especially with expansion from Kansas City.
               </p>
+              <p className="text-foreground/70 mb-4">
+                We can't ignore it. But we can manage it.
+              </p>
+              <p className="text-foreground/70 mb-2">I support:</p>
               <ul className="space-y-2 text-foreground/80">
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  Careful, responsible leadership
+                  long-term planning that protects our communities
                 </li>
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  No bad deals with taxpayer dollars
+                  responsible development—not overdevelopment
                 </li>
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  Open communication between county government and residents
+                  infrastructure that keeps up with growth
                 </li>
               </ul>
+              <p className="text-foreground/70 mt-4">
+                We should shape growth—not let it control us.
+              </p>
             </div>
 
             {/* Priority 3 */}
             <div className="bg-muted/30 rounded-lg p-6 md:p-8">
               <h4 className="font-heading text-xl md:text-2xl font-bold text-navy mb-3">
-                3. Public Safety & Economic Opportunity
+                3. Public Safety & Community Wellbeing
               </h4>
               <p className="text-foreground/70 mb-4">
-                Strong communities require safety and opportunity.
+                Public safety is not optional—it's essential.
               </p>
+              <p className="text-foreground/70 mb-2">That means:</p>
               <ul className="space-y-2 text-foreground/80">
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  Support law enforcement and community safety
+                  supporting law enforcement and first responders
                 </li>
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  Encourage business growth and job creation
+                  ensuring fast response times
                 </li>
                 <li className="flex items-start">
                   <span className="text-campaign-red mr-2">•</span>
-                  Expand the tax base without increasing the burden on homeowners
+                  planning for future community needs
                 </li>
               </ul>
+              <p className="text-foreground/70 mt-4">
+                Safe communities are the foundation of everything else we build.
+              </p>
+            </div>
+
+            {/* Priority 4 */}
+            <div className="bg-muted/30 rounded-lg p-6 md:p-8">
+              <h4 className="font-heading text-xl md:text-2xl font-bold text-navy mb-3">
+                4. Economic Opportunity
+              </h4>
+              <p className="text-foreground/70 mb-4">
+                Economic development should benefit the people who already live here.
+              </p>
+              <p className="text-foreground/70 mb-2">My focus is:</p>
+              <ul className="space-y-2 text-foreground/80">
+                <li className="flex items-start">
+                  <span className="text-campaign-red mr-2">•</span>
+                  attracting quality jobs
+                </li>
+                <li className="flex items-start">
+                  <span className="text-campaign-red mr-2">•</span>
+                  supporting small businesses
+                </li>
+                <li className="flex items-start">
+                  <span className="text-campaign-red mr-2">•</span>
+                  creating opportunities for future generations
+                </li>
+              </ul>
+              <p className="text-foreground/70 mt-4">
+                Platte County should be a place where families can stay—not leave to find opportunity.
+              </p>
             </div>
           </div>
         </div>
