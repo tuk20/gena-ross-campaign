@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import WhyRunningSection from "@/components/WhyRunningSection";
+import GovernmentListensSection from "@/components/GovernmentListensSection";
 import VideoSection from "@/components/VideoSection";
 import AboutWebsiteSection from "@/components/AboutWebsiteSection";
 import AboutCandidateSection from "@/components/AboutCandidateSection";
