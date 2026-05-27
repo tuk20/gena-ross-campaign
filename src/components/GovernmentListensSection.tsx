@@ -81,7 +81,8 @@ const GovernmentListensSection = () => {
 
 
           {/* Vision Section */}
-          <div className="border-t border-border pt-12">
+          <div className="border-t border-border pt-12 max-w-4xl mx-auto">
+
             <div className="text-center mb-8">
               <p className="text-campaign-red font-semibold text-lg mb-2">Vision</p>
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-4">
