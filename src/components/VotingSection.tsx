@@ -1,5 +1,7 @@
 import { MapPin, Calendar, ExternalLink, FileText, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import knowYourPowerFlyer from "@/assets/know-your-power-flyer.png.asset.json";
 
 const electionDates = [
   { id: "1", event_name: "Filing Opens", event_date: "February 24, 2026" },
