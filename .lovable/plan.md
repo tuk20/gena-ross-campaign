@@ -1,25 +1,44 @@
-## Where the flyer fits
+# Make the "Know Your Power" flyer more visible
 
-The flyer's message ("Talk to me. What's on your mind?... Listening, Engaging, Solutions, Together") is a near-perfect thematic match for the **"A Government that Listens"** section already on the page. That section is about accessibility, dialogue, and quarterly community meetings — exactly what the flyer promotes.
+## Decision
 
-Placing it there reinforces the section's message visually without competing with the Hero (which is the candidate's primary intro) or duplicating the PSA video popup.
+Keep the PSA video popup as-is (it's the only place the candidate's voice auto-surfaces to first-time visitors). Instead, promote the flyer out of its current spot inside the Voting section and give it its own dedicated, eye-catching section higher on the page.
 
-## Plan
+## Why not swap the popup
 
-1. Save the uploaded flyer to `src/assets/talk-to-me-flyer.jpg` (imported as an ES6 module for proper bundling).
-2. Update `src/components/GovernmentListensSection.tsx`:
-   - Convert the "A Government that Listens" block into a two-column layout on `md+`:
-     - **Left column**: the existing copy (intro, bullet list card, "You spoke..." quote, closing line) — unchanged content and styling.
-     - **Right column**: the flyer image, rounded with shadow, matching the existing card aesthetic (subtle border, `shadow-lg`, `rounded-xl`, soft gradient glow like the Hero image treatment for consistency).
-   - On mobile, the flyer stacks below the text.
-   - Add a clickable behavior: clicking the flyer opens it full-size in a lightbox (shadcn `Dialog`) so voters can read the fine print on phones.
-   - Alt text: "Dr. Gena L. Ross — Talk to me. Platte County Presiding Commissioner campaign flyer."
-3. Leave the Vision sub-section below it untouched.
-4. No changes to Hero, News, or PSA popup — keeping scope tight per the recent UX audit (avoiding more visual clutter elsewhere).
+- The flyer is a tall, dense portrait image — it will clip or force scrolling inside a modal.
+- Losing the candidate's face/voice on first impression hurts trust-building.
+- A popup full of ballot amendment fine print feels like homework and gets dismissed fast.
 
-## Technical details
+## What changes
 
-- Image import: `import flyerImage from "@/assets/talk-to-me-flyer.jpg";`
-- Dialog: existing `@/components/ui/dialog` — trigger is the image with `cursor-zoom-in`, content shows the full image on a dark backdrop.
-- Styling tokens only (`text-navy`, `text-campaign-red`, `bg-muted/30`) — no hardcoded colors.
-- Responsive: `grid md:grid-cols-2 gap-10 items-start`.
+1. **Create a new section** `KnowYourPowerSection.tsx`:
+   - Full-width band with a soft navy/cream gradient background to make it pop.
+   - Two-column layout on desktop, stacked on mobile:
+     - Left: Heading ("Know Your Power on the 2026 Ballot"), short 2–3 sentence intro about why understanding the amendments matters, and a primary CTA button ("View Full Flyer") that opens the existing lightbox dialog.
+     - Right: The flyer image at a readable size with `rounded-2xl`, `shadow-2xl`, gradient blur halo, and `cursor-zoom-in`.
+   - Click image OR button → same Dialog lightbox already built (max-w-3xl, scrollable).
+
+2. **Place it on the page** in `src/pages/Index.tsx`:
+   - Insert immediately after the **Why I'm Running / High Participation** area and **before** the Voting section.
+   - This gives it prominence without disrupting the narrative flow (hero → story → policy → ballot education → how to vote → news → contact).
+
+3. **Remove the flyer block from `VotingSection.tsx`**:
+   - Strip the "Know Your Ballot" callout, the Dialog imports, and the flyer import from that file.
+   - Restore the Voting section's original 3-column resources grid as the focus.
+
+4. **Styling**:
+   - Use existing semantic tokens (`bg-secondary`, `text-primary`, `border-primary/20`, etc.) — no hardcoded colors.
+   - Garamond heading, Poppins body, matching the rest of the site.
+
+## Files touched
+
+- `src/components/KnowYourPowerSection.tsx` (new)
+- `src/components/VotingSection.tsx` (remove flyer block + unused imports)
+- `src/pages/Index.tsx` (add new section in correct position)
+
+## Not changing
+
+- `PSAPopup` and the video remain exactly as they are.
+- The `know-your-power-flyer.png.asset.json` asset stays.
+- No copy changes to other sections.
