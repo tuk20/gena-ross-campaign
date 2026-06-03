@@ -1,88 +1,7 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/hooks/use-toast";
 import { Heart } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 const VolunteerSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    interests: [] as string[],
-    message: "",
-  });
-
-  const volunteerOptions = [
-    { id: "canvassing", label: "Door-to-door canvassing" },
-    { id: "phone-banking", label: "Phone banking" },
-    { id: "events", label: "Event support" },
-    { id: "social-media", label: "Social media assistance" },
-    { id: "other", label: "Other" },
-  ];
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleInterestChange = (id: string, checked: boolean) => {
-    setFormData((prev) => ({
-      ...prev,
-      interests: checked
-        ? [...prev.interests, id]
-        : prev.interests.filter((i) => i !== id),
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { data, error } = await supabase.functions.invoke("send-volunteer-email", {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          interests: formData.interests,
-          message: formData.message,
-        },
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Thank you for volunteering!",
-        description: "We'll be in touch soon.",
-      });
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        interests: [],
-        message: "",
-      });
-    } catch (error: any) {
-      console.error("Form submission error:", error);
-      toast({
-        title: "Submission Error",
-        description: "Please try again or email us directly at ross4plattecounty@gmail.com",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section id="volunteer" className="py-16 md:py-24 bg-navy">
       <div className="container mx-auto px-4">
@@ -99,107 +18,12 @@ const VolunteerSection = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-background rounded-2xl p-6 md:p-8 shadow-2xl">
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <Label htmlFor="name" className="text-foreground font-medium">
-                  Full Name *
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="mt-1.5"
-                  placeholder="Your full name"
-                />
-              </div>
-              <div>
-                <Label htmlFor="email" className="text-foreground font-medium">
-                  Email Address *
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="mt-1.5"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <Label htmlFor="phone" className="text-foreground font-medium">
-                Phone Number
-              </Label>
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleInputChange}
-                className="mt-1.5"
-                placeholder="(555) 123-4567"
-              />
-            </div>
-
-            <div className="mb-6">
-              <Label className="text-foreground font-medium mb-3 block">
-                Areas of Interest
-              </Label>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {volunteerOptions.map((option) => (
-                  <div key={option.id} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={option.id}
-                      checked={formData.interests.includes(option.id)}
-                      onCheckedChange={(checked) =>
-                        handleInterestChange(option.id, checked as boolean)
-                      }
-                    />
-                    <label
-                      htmlFor={option.id}
-                      className="text-sm text-foreground/80 cursor-pointer"
-                    >
-                      {option.label}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <Label htmlFor="message" className="text-foreground font-medium">
-                Message (Optional)
-              </Label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                className="mt-1.5"
-                placeholder="Tell us about yourself or how you'd like to help..."
-                rows={4}
-              />
-            </div>
-
-            <Button
-              type="submit"
-              variant="campaign"
-              size="lg"
-              className="w-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Submitting..." : "Submit Volunteer Form"}
-            </Button>
-          </form>
-
-          <div className="text-center mt-8">
+          <div className="flex flex-col items-center gap-6">
+            <a href="mailto:ross4plattecounty@gmail.com?subject=Volunteer%20for%20Dr.%20Ross%20Campaign&body=Hello%20Dr.%20Ross,%0A%0AI%20would%20like%20to%20volunteer%20for%20your%20campaign.%20Please%20let%20me%20know%20how%20I%20can%20help.%0A%0ABest%20regards,">
+              <Button variant="campaign" size="xl">
+                Email to Volunteer
+              </Button>
+            </a>
             <a
               href="https://secure.winred.com/dr-gena-ross-for-platte-county/donate-today"
               target="_blank"
