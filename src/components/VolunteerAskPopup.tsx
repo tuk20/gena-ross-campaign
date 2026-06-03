@@ -28,9 +28,7 @@ const VolunteerAskPopup = () => {
 
   const handleVolunteer = () => {
     handleDismiss();
-    setTimeout(() => {
-      document.getElementById("volunteer")?.scrollIntoView({ behavior: "smooth" });
-    }, 150);
+    window.location.href = "mailto:ross4plattecounty@gmail.com?subject=I'd%20Like%20to%20Deliver%20Flyers%20for%20Dr.%20Ross&body=Hello%20Dr.%20Ross,%0A%0AI%20would%20like%20to%20volunteer%20to%20help%20deliver%20campaign%20flyers.%20Please%20let%20me%20know%20how%20I%20can%20help.%0A%0ABest%20regards,";
   };
 
   return (
@@ -53,7 +51,8 @@ const VolunteerAskPopup = () => {
           </DialogHeader>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="campaign" size="lg" onClick={handleVolunteer}>
-              I'll Help Deliver Flyers
+              <Mail className="w-4 h-4" />
+              Email to Volunteer
             </Button>
             <Button variant="campaign-outline" size="lg" onClick={handleDismiss}>
               Maybe Later
