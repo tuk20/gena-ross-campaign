@@ -86,6 +86,9 @@ const VotingSection = () => {
             </DialogContent>
           </Dialog>
         </div>
+
+        {/* Voting Resources Cards */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {votingResources.map((resource, index) => (
             <div
               key={index}
