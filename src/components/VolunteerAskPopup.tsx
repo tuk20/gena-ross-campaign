@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Mail } from "lucide-react";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
