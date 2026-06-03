@@ -1,5 +1,7 @@
 import { MapPin, Calendar, ExternalLink, FileText, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import knowYourPowerFlyer from "@/assets/know-your-power-flyer.png.asset.json";
 
 const electionDates = [
   { id: "1", event_name: "Filing Opens", event_date: "February 24, 2026" },
@@ -46,6 +48,43 @@ const VotingSection = () => {
           <p className="text-foreground/80 max-w-2xl mx-auto">
             Make your voice heard in Platte County. Find everything you need to participate in the 2026 Missouri elections.
           </p>
+        </div>
+
+        {/* Know Your Power - Ballot Education Flyer */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="text-center mb-6">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-2">
+              Know Your Ballot
+            </h3>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              Missouri voters will decide four important constitutional amendments. Be informed. Be engaged. Be heard.
+            </p>
+          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button
+                type="button"
+                className="relative group cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-campaign-red rounded-2xl block mx-auto"
+                aria-label="View full 2026 Primary Election Ballot guide"
+              >
+                <div className="absolute -inset-3 bg-gradient-to-br from-campaign-red/20 to-navy/20 rounded-2xl blur-2xl group-hover:from-campaign-red/30 group-hover:to-navy/30 transition-all duration-500"></div>
+                <img
+                  src={knowYourPowerFlyer.url}
+                  alt="Know Your Power. Please Vote. 2026 Primary Election Ballot — Four important Missouri constitutional amendments explained by Dr. Gena L. Ross."
+                  loading="lazy"
+                  className="relative w-full max-w-2xl mx-auto rounded-2xl shadow-2xl border border-border group-hover:scale-[1.01] transition-all duration-500"
+                />
+                <span className="sr-only">Click to enlarge</span>
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-3xl p-2 bg-background max-h-[90vh] overflow-y-auto">
+              <img
+                src={knowYourPowerFlyer.url}
+                alt="Know Your Power. Please Vote. 2026 Primary Election Ballot — Four important Missouri constitutional amendments explained by Dr. Gena L. Ross."
+                className="w-full h-auto rounded-lg"
+              />
+            </DialogContent>
+          </Dialog>
         </div>
 
         {/* Voting Resources Cards */}
