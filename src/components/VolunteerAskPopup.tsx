@@ -15,11 +15,14 @@ const VolunteerAskPopup = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem(POPUP_KEY);
-    if (!dismissed) {
-      const timer = setTimeout(() => setOpen(true), 2000);
-      return () => clearTimeout(timer);
-    }
+    if (sessionStorage.getItem(POPUP_KEY)) return;
+    const interval = setInterval(() => {
+      if (sessionStorage.getItem("psa_popup_dismissed")) {
+        clearInterval(interval);
+        setTimeout(() => setOpen(true), 600);
+      }
+    }, 500);
+    return () => clearInterval(interval);
   }, []);
 
   const handleDismiss = () => {
