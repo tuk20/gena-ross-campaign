@@ -23,7 +23,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
-        <KnowYourPowerSection />
+        <LeadershipCommitmentSection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <WhyRunningSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
@@ -41,6 +41,8 @@ const Index = () => {
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <PrioritiesSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
+        <KnowYourPowerSection />
+        <div className="h-2 bg-navy/80" aria-hidden="true" />
         <VotingSection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <NewsSection />
