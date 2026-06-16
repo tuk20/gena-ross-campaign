@@ -1,4 +1,5 @@
 import { Handshake, Eye, Scale, Users } from "lucide-react";
+import flyerAsset from "@/assets/campaign-flyer.png.asset.json";
 
 const LeadershipCommitmentSection = () => {
   const pillars = [
@@ -48,6 +49,16 @@ const LeadershipCommitmentSection = () => {
             <p className="text-foreground/70 text-lg leading-relaxed max-w-3xl mx-auto">
               One County. One Team. One Future.
             </p>
+          </div>
+
+          {/* Campaign Flyer */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src={flyerAsset.url}
+              alt="Together, We Build a Stronger Platte County — Dr. Gena Ross for Presiding Commissioner"
+              className="max-w-full md:max-w-2xl rounded-xl shadow-lg border border-border"
+              loading="lazy"
+            />
           </div>
 
           {/* Main Message */}
