@@ -12,6 +12,7 @@ import KnowYourPowerSection from "@/components/KnowYourPowerSection";
 import NewsSection from "@/components/NewsSection";
 import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
+import LeadershipCommitmentSection from "@/components/LeadershipCommitmentSection";
 import VolunteerAskPopup from "@/components/VolunteerAskPopup";
 
 const Index = () => {
