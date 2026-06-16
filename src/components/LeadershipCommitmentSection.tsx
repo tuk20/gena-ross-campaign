@@ -51,6 +51,16 @@ const LeadershipCommitmentSection = () => {
             </p>
           </div>
 
+          {/* Campaign Flyer */}
+          <div className="mb-12 flex justify-center">
+            <img
+              src={flyerAsset.url}
+              alt="Together, We Build a Stronger Platte County — Dr. Gena Ross for Presiding Commissioner"
+              className="max-w-full md:max-w-2xl rounded-xl shadow-lg border border-border"
+              loading="lazy"
+            />
+          </div>
+
           {/* Main Message */}
           <div className="space-y-6 mb-16">
             <p className="text-foreground/80 leading-relaxed text-lg">
