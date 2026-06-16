@@ -12,6 +12,7 @@ import KnowYourPowerSection from "@/components/KnowYourPowerSection";
 import NewsSection from "@/components/NewsSection";
 import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
+import LeadershipCommitmentSection from "@/components/LeadershipCommitmentSection";
 import VolunteerAskPopup from "@/components/VolunteerAskPopup";
 
 const Index = () => {
@@ -36,6 +37,8 @@ const Index = () => {
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <AboutCandidateSection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
+        <LeadershipCommitmentSection />
+        <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <PrioritiesSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <VotingSection />
