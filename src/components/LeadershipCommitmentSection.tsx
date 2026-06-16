@@ -1,4 +1,5 @@
 import { Handshake, Eye, Scale, Users } from "lucide-react";
+import flyerAsset from "@/assets/campaign-flyer.png.asset.json";
 
 const LeadershipCommitmentSection = () => {
   const pillars = [
