@@ -37,8 +37,6 @@ const Index = () => {
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <AboutCandidateSection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
-        <LeadershipCommitmentSection />
-        <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <PrioritiesSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <KnowYourPowerSection />
