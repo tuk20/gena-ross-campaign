@@ -29,12 +29,13 @@ const VolunteerAskPopup = () => {
   return (
     <Dialog open={open} onOpenChange={(val) => { if (!val) handleDismiss(); else setOpen(val); }}>
       <DialogContent className="sm:max-w-3xl p-0 overflow-hidden border-border max-h-[95vh] overflow-y-auto">
-        <div className="grid md:grid-cols-2 gap-0">
+        <div className="grid md:grid-cols-2 gap-0 items-center">
           <img
             src={ballotAsset.url}
             alt="Sample ballot showing Gena L. Ross listed first for Presiding Commissioner"
-            className="w-full h-full object-cover"
+            className="w-full h-auto object-contain bg-cream"
           />
+
           <div className="p-6 text-center flex flex-col justify-center">
             <DialogHeader className="mb-4">
               <div className="w-14 h-14 bg-campaign-red/10 rounded-full flex items-center justify-center mx-auto mb-3">
