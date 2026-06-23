@@ -13,6 +13,7 @@ import NewsSection from "@/components/NewsSection";
 import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
 import LeadershipCommitmentSection from "@/components/LeadershipCommitmentSection";
+import ManageItWiselySection from "@/components/ManageItWiselySection";
 import VolunteerAskPopup from "@/components/VolunteerAskPopup";
 
 const Index = () => {
@@ -39,6 +40,8 @@ const Index = () => {
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <PrioritiesSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
+        <ManageItWiselySection />
+        <div className="h-2 bg-navy/80" aria-hidden="true" />
         <KnowYourPowerSection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <VotingSection />
