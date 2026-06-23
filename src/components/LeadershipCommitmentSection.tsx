@@ -25,16 +25,7 @@ const LeadershipCommitmentSection = () => {
     },
   ];
 
-  const hashtags = [
-    "#DrGenaRoss",
-    "#PlatteCounty",
-    "#PlatteCountyMO",
-    "#LeadingThroughCollaboration",
-    "#TransparencyMatters",
-    "#CommunityFirst",
-    "#StrongerTogether",
-    "#OneCountyOneFuture",
-  ];
+
 
   return (
     <section id="leadership-commitment" className="py-16 md:py-24 bg-muted/30">
@@ -116,17 +107,6 @@ const LeadershipCommitmentSection = () => {
             <div className="w-24 h-1 bg-campaign-red mx-auto"></div>
           </div>
 
-          {/* Hashtags */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {hashtags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-navy/10 rounded-full text-navy text-sm font-medium hover:bg-campaign-red/10 hover:text-campaign-red transition-colors duration-300"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

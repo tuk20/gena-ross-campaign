@@ -37,24 +37,24 @@ const ManageItWiselySection = () => {
                 Platte County such a great place to call home.
               </p>
 
-              <div className="bg-campaign-red text-cream rounded-xl p-6 shadow-md">
+              <div className="bg-campaign-red text-white rounded-xl p-6 shadow-md">
                 <div className="flex items-start gap-3 mb-3">
-                  <MessageCircle className="w-6 h-6 flex-shrink-0 mt-1" />
-                  <h3 className="font-heading text-xl font-bold">
+                  <MessageCircle className="w-6 h-6 flex-shrink-0 mt-1 text-white" />
+                  <h3 className="font-heading text-xl font-bold text-white">
                     I'd love to hear from you
                   </h3>
                 </div>
-                <p className="leading-relaxed mb-3">
+                <p className="leading-relaxed mb-3 text-white">
                   What infrastructure or transportation improvement would you most
                   like to see in Platte County?
                 </p>
-                <p className="italic font-heading text-lg">
+                <p className="italic font-heading text-lg text-white">
                   "Traffic? Roads? Public safety? Development? What's your top
                   priority for Platte County?"
                 </p>
                 <a
                   href="mailto:ross4plattecounty@gmail.com?subject=My%20Top%20Priority%20for%20Platte%20County"
-                  className="inline-block mt-4 px-5 py-2 bg-cream text-campaign-red font-semibold rounded-md hover:bg-white transition-colors"
+                  className="inline-block mt-4 px-6 py-3 bg-white text-campaign-red font-bold rounded-md shadow-md border-2 border-white hover:bg-cream hover:shadow-lg transition-all"
                 >
                   Share Your Thoughts
                 </a>
