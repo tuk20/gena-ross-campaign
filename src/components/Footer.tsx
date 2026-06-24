@@ -21,7 +21,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-white/40 text-xs mt-6">
-            Paid for by Dr. Gena L. Ross for Platte County — Treasurer Charlotte Hoverder
+            Paid for by Dr. Gena L. Ross for Platte County — Treasurer Alisa Jones
           </p>
         </div>
       </div>
