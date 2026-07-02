@@ -14,6 +14,7 @@ import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
 import LeadershipCommitmentSection from "@/components/LeadershipCommitmentSection";
 import ManageItWiselySection from "@/components/ManageItWiselySection";
+import WeeklyRecapSection from "@/components/WeeklyRecapSection";
 import VolunteerAskPopup from "@/components/VolunteerAskPopup";
 
 const Index = () => {
@@ -49,8 +50,8 @@ const Index = () => {
         <NewsSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <VolunteerSection />
-
-
+        <div className="h-2 bg-navy/80" aria-hidden="true" />
+        <WeeklyRecapSection />
       </main>
       <Footer />
     </div>
