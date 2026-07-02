@@ -11,6 +11,7 @@ const Header = () => {
     { href: "#voting", label: "Vote" },
     { href: "#news", label: "News" },
     { href: "#volunteer", label: "Volunteer" },
+    { href: "#weekly-recap", label: "Weekly Recap" },
   ];
 
   return (
