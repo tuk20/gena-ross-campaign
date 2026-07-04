@@ -1,5 +1,5 @@
 import { Calendar } from "lucide-react";
-import firstRecapImage from "@/assets/campaign-flyer.png.asset.json";
+import firstRecapImage from "@/assets/ross-report-week-1.png.asset.json";
 
 interface Recap {
   id: string;
