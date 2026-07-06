@@ -1,5 +1,13 @@
 import { Calendar } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import firstRecapImage from "@/assets/ross-report-week-1.png.asset.json";
+import secondRecapImage from "@/assets/ross-report-week-2.png.asset.json";
 
 interface Recap {
   id: string;
@@ -11,6 +19,16 @@ interface Recap {
 }
 
 const recaps: Recap[] = [
+  {
+    id: "recap-2",
+    dateLabel: "Issue No. 2 — July 5–11, 2026",
+    title: "The Ross Report — 30 Days Until the Primary",
+    image: secondRecapImage.url,
+    imageAlt:
+      "The Ross Report Issue No. 2 — July 5-11, 2026 weekly newsletter from Dr. Gena L. Ross.",
+    caption:
+      "My goal is simple: keep our community informed, encourage civic engagement, and recognize the people who make Platte County a wonderful place to live, work, and raise a family. This week's Community Spotlight honors Dr. David Lowry for his years of compassionate service to the children and families of Platte County — as a mother of three, I'll always be grateful for the exceptional care he gave my children. Thank you for taking a few moments to read The Ross Report. Have a blessed and wonderful week!",
+  },
   {
     id: "recap-1",
     dateLabel: "Week of June 29, 2026",
@@ -33,40 +51,48 @@ const WeeklyRecapSection = () => {
           </h2>
           <div className="w-24 h-1 bg-campaign-red mx-auto mb-4"></div>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Catch up on the latest from the campaign trail — new posts every week.
+            Catch up on the latest from the campaign trail — swipe through new issues each week.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-8">
-          {recaps.map((recap) => (
-            <article
-              key={recap.id}
-              className="bg-background rounded-xl overflow-hidden shadow-sm border border-border hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="p-6 md:p-8">
-                <div className="flex items-center gap-2 mb-3">
-                  <Calendar className="w-4 h-4 text-campaign-red" />
-                  <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
-                    {recap.dateLabel}
-                  </span>
-                </div>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-5">
-                  {recap.title}
-                </h3>
-                <div className="rounded-lg overflow-hidden border border-border mb-5 bg-muted/40">
-                  <img
-                    src={recap.image}
-                    alt={recap.imageAlt}
-                    className="w-full h-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <p className="text-foreground/80 leading-relaxed">
-                  {recap.caption}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div className="max-w-3xl mx-auto">
+          <Carousel opts={{ loop: true, align: "start" }} className="relative">
+            <CarouselContent>
+              {recaps.map((recap) => (
+                <CarouselItem key={recap.id}>
+                  <article className="bg-background rounded-xl overflow-hidden shadow-sm border border-border h-full">
+                    <div className="p-6 md:p-8">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Calendar className="w-4 h-4 text-campaign-red" />
+                        <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
+                          {recap.dateLabel}
+                        </span>
+                      </div>
+                      <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-5">
+                        {recap.title}
+                      </h3>
+                      <div className="rounded-lg overflow-hidden border border-border mb-5 bg-muted/40">
+                        <img
+                          src={recap.image}
+                          alt={recap.imageAlt}
+                          className="w-full h-auto object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="text-foreground/80 leading-relaxed">
+                        {recap.caption}
+                      </p>
+                    </div>
+                  </article>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex -left-4 md:-left-12 bg-background border-campaign-red text-campaign-red hover:bg-campaign-red hover:text-white" />
+            <CarouselNext className="hidden sm:flex -right-4 md:-right-12 bg-background border-campaign-red text-campaign-red hover:bg-campaign-red hover:text-white" />
+          </Carousel>
+          <p className="text-center text-sm text-foreground/60 mt-4 sm:hidden">
+            Swipe to see more issues →
+          </p>
         </div>
       </div>
     </section>
