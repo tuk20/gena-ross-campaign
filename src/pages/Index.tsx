@@ -9,6 +9,7 @@ import AboutCandidateSection from "@/components/AboutCandidateSection";
 import PrioritiesSection from "@/components/PrioritiesSection";
 import VotingSection from "@/components/VotingSection";
 import KnowYourPowerSection from "@/components/KnowYourPowerSection";
+import PlatteCountySection from "@/components/PlatteCountySection";
 import NewsSection from "@/components/NewsSection";
 import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
@@ -33,17 +34,19 @@ const Index = () => {
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <GovernmentListensSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
-        <VideoSection />
-        <div className="h-2 bg-navy/80" aria-hidden="true" />
         <AboutWebsiteSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <AboutCandidateSection />
+        <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
+        <VideoSection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <PrioritiesSection />
         <div className="h-2 bg-campaign-red/80" aria-hidden="true" />
         <ManageItWiselySection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <KnowYourPowerSection />
+        <div className="h-2 bg-navy/80" aria-hidden="true" />
+        <PlatteCountySection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
         <VotingSection />
         <div className="h-2 bg-navy/80" aria-hidden="true" />
