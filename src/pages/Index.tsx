@@ -9,6 +9,7 @@ import AboutCandidateSection from "@/components/AboutCandidateSection";
 import PrioritiesSection from "@/components/PrioritiesSection";
 import VotingSection from "@/components/VotingSection";
 import KnowYourPowerSection from "@/components/KnowYourPowerSection";
+import PlatteCountySection from "@/components/PlatteCountySection";
 import NewsSection from "@/components/NewsSection";
 import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
