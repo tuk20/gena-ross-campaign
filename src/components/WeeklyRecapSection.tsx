@@ -32,6 +32,16 @@ const recaps: Recap[] = [
       "Election Day is getting closer, and every informed vote helps shape the future of Platte County. This week’s Ross Report highlights community growth, preserving our local history, and the importance of staying informed as we approach the August 4 Primary Election. No matter where you stand on the issues, I encourage everyone to do their homework, learn about the candidates and ballot issues, and make a plan to vote. Strong communities are built by informed citizens who stay engaged and work together. Have a safe and blessed week, Platte County! — Dr. Gena L. Ross",
   },
   {
+    id: "recap-3",
+    dateLabel: "Issue No. 3 — July 12–18, 2026",
+    title: "The Ross Report — Community Growth & Local Spotlight",
+    image: thirdRecapImage.url,
+    imageAlt:
+      "The Ross Report Issue No. 3 — July 12-18, 2026 weekly newsletter from Dr. Gena L. Ross.",
+    caption:
+      "Happy Sunday, Platte County! This week's Ross Report includes a reminder that the August 4 Primary Election is approaching, a message about thoughtful community growth, and a Community Spotlight on Popculture Gourmet Popcorn & Ice Cream in Parkville — trust me, it's worth the visit! My goal is to continue sharing positive, factual, and community-focused updates each week. Have a wonderful and blessed Sunday! Working Together. Listening First. Building a Better Platte County. — Dr. Gena Ross",
+  },
+  {
     id: "recap-2",
     dateLabel: "Issue No. 2 — July 5–11, 2026",
     title: "The Ross Report — 30 Days Until the Primary",
