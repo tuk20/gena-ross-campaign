@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import firstRecapImage from "@/assets/ross-report-week-1.png.asset.json";
 import secondRecapImage from "@/assets/ross-report-week-2.png.asset.json";
+import fourthRecapImage from "@/assets/ross-report-week-4.png.asset.json";
 
 interface Recap {
   id: string;
