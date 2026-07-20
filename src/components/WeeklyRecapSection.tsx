@@ -21,6 +21,16 @@ interface Recap {
 
 const recaps: Recap[] = [
   {
+    id: "recap-4",
+    dateLabel: "Issue No. 4 — July 19–25, 2026",
+    title: "The Ross Report — Election Day Is Approaching",
+    image: fourthRecapImage.url,
+    imageAlt:
+      "The Ross Report Issue No. 4 — July 19-25, 2026 weekly newsletter from Dr. Gena L. Ross.",
+    caption:
+      "Election Day is getting closer, and every informed vote helps shape the future of Platte County. This week’s Ross Report highlights community growth, preserving our local history, and the importance of staying informed as we approach the August 4 Primary Election. No matter where you stand on the issues, I encourage everyone to do their homework, learn about the candidates and ballot issues, and make a plan to vote. Strong communities are built by informed citizens who stay engaged and work together. Have a safe and blessed week, Platte County! — Dr. Gena L. Ross",
+  },
+  {
     id: "recap-2",
     dateLabel: "Issue No. 2 — July 5–11, 2026",
     title: "The Ross Report — 30 Days Until the Primary",
