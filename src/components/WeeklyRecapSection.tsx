@@ -10,6 +10,7 @@ import firstRecapImage from "@/assets/ross-report-week-1.png.asset.json";
 import secondRecapImage from "@/assets/ross-report-week-2.png.asset.json";
 import thirdRecapImage from "@/assets/ross-report-week-3.png.asset.json";
 import fourthRecapImage from "@/assets/ross-report-week-4.png.asset.json";
+import fifthRecapImage from "@/assets/ross-report-week-5.png.asset.json";
 
 interface Recap {
   id: string;
@@ -21,6 +22,16 @@ interface Recap {
 }
 
 const recaps: Recap[] = [
+  {
+    id: "recap-5",
+    dateLabel: "Issue No. 5 — July 26 – August 1, 2026",
+    title: "The Ross Report — Early Voting Is Underway",
+    image: fifthRecapImage.url,
+    imageAlt:
+      "The Ross Report Issue No. 5 — July 26-August 1, 2026 weekly newsletter from Dr. Gena L. Ross.",
+    caption:
+      "As we get closer to the August 4 Primary Election, I encourage every resident to take a few minutes to stay informed about the issues that affect Platte County. This week’s Ross Report highlights early voting, responsible growth, taxpayer accountability, and the importance of community involvement. No matter where you stand, an informed community is a stronger community. Thank you for taking the time to read, stay engaged, and make your voice heard. Have a safe and blessed week, Platte County! – Dr. Gena L. Ross, Republican Candidate for Platte County Presiding Commissioner",
+  },
   {
     id: "recap-4",
     dateLabel: "Issue No. 4 — July 19–25, 2026",
