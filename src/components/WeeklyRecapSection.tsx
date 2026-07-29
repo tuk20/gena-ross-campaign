@@ -1,4 +1,4 @@
-import { Calendar } from "lucide-react";
+import { Calendar, Sparkles } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +11,7 @@ import secondRecapImage from "@/assets/ross-report-week-2.png.asset.json";
 import thirdRecapImage from "@/assets/ross-report-week-3.png.asset.json";
 import fourthRecapImage from "@/assets/ross-report-week-4.png.asset.json";
 import fifthRecapImage from "@/assets/ross-report-week-5.png.asset.json";
+import specialEditionImage from "@/assets/RossReport_FlockCam.png.asset.json";
 
 interface Recap {
   id: string;
@@ -19,9 +20,21 @@ interface Recap {
   image: string;
   imageAlt: string;
   caption: string;
+  isSpecial?: boolean;
 }
 
 const recaps: Recap[] = [
+  {
+    id: "recap-special-flock",
+    dateLabel: "Special Edition — Community Conversation",
+    title: "Flock Safety Cameras in Platte County",
+    image: specialEditionImage.url,
+    imageAlt:
+      "The Ross Report Special Edition — Community Conversation: Flock Safety Cameras in Platte County.",
+    caption:
+      "There has been a lot of conversation lately about Flock Safety cameras here in Platte County and across our region. Rather than make assumptions, I’d like to hear directly from the people who live and work in our community. This isn’t about taking sides — it’s about listening. Do you support Flock Safety cameras? Do you have concerns about privacy? If they’re used, what safeguards do you think should be in place? Please keep the conversation respectful. Every perspective matters, and I look forward to hearing from you. Let’s have a thoughtful community conversation.",
+    isSpecial: true,
+  },
   {
     id: "recap-5",
     dateLabel: "Issue No. 5 — July 26 – August 1, 2026",
@@ -84,7 +97,7 @@ const WeeklyRecapSection = () => {
           </h2>
           <div className="w-24 h-1 bg-campaign-red mx-auto mb-4"></div>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Catch up on the latest from the campaign trail — swipe through new issues each week.
+            Catch up on the latest from the campaign trail — swipe through new issues each week. Special editions are marked with a star badge.
           </p>
         </div>
 
@@ -93,13 +106,33 @@ const WeeklyRecapSection = () => {
             <CarouselContent>
               {recaps.map((recap) => (
                 <CarouselItem key={recap.id}>
-                  <article className="bg-background rounded-xl overflow-hidden shadow-sm border border-border h-full">
+                  <article
+                    className={`bg-background rounded-xl overflow-hidden shadow-sm h-full ${
+                      recap.isSpecial
+                        ? "border-2 border-campaign-red ring-4 ring-campaign-red/10"
+                        : "border border-border"
+                    }`}
+                  >
                     <div className="p-6 md:p-8">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Calendar className="w-4 h-4 text-campaign-red" />
-                        <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
-                          {recap.dateLabel}
-                        </span>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        {recap.isSpecial ? (
+                          <>
+                            <Sparkles className="w-4 h-4 text-campaign-red" />
+                            <span className="text-sm font-bold text-campaign-red uppercase tracking-wide">
+                              {recap.dateLabel}
+                            </span>
+                            <span className="inline-flex items-center rounded-full bg-campaign-red px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
+                              Special Edition
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <Calendar className="w-4 h-4 text-campaign-red" />
+                            <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
+                              {recap.dateLabel}
+                            </span>
+                          </>
+                        )}
                       </div>
                       <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-5">
                         {recap.title}
