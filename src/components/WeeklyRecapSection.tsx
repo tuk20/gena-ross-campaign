@@ -97,7 +97,7 @@ const WeeklyRecapSection = () => {
           </h2>
           <div className="w-24 h-1 bg-campaign-red mx-auto mb-4"></div>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Catch up on the latest from the campaign trail — swipe through new issues each week.
+            Catch up on the latest from the campaign trail — swipe through new issues each week. Special editions are marked with a star badge.
           </p>
         </div>
 
