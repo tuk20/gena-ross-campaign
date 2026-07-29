@@ -106,13 +106,33 @@ const WeeklyRecapSection = () => {
             <CarouselContent>
               {recaps.map((recap) => (
                 <CarouselItem key={recap.id}>
-                  <article className="bg-background rounded-xl overflow-hidden shadow-sm border border-border h-full">
+                  <article
+                    className={`bg-background rounded-xl overflow-hidden shadow-sm h-full ${
+                      recap.isSpecial
+                        ? "border-2 border-campaign-red ring-4 ring-campaign-red/10"
+                        : "border border-border"
+                    }`}
+                  >
                     <div className="p-6 md:p-8">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Calendar className="w-4 h-4 text-campaign-red" />
-                        <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
-                          {recap.dateLabel}
-                        </span>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        {recap.isSpecial ? (
+                          <>
+                            <Sparkles className="w-4 h-4 text-campaign-red" />
+                            <span className="text-sm font-bold text-campaign-red uppercase tracking-wide">
+                              {recap.dateLabel}
+                            </span>
+                            <span className="inline-flex items-center rounded-full bg-campaign-red px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
+                              Special Edition
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <Calendar className="w-4 h-4 text-campaign-red" />
+                            <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
+                              {recap.dateLabel}
+                            </span>
+                          </>
+                        )}
                       </div>
                       <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-5">
                         {recap.title}
