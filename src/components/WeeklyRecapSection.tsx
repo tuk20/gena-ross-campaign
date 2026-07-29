@@ -25,6 +25,17 @@ interface Recap {
 
 const recaps: Recap[] = [
   {
+    id: "recap-special-flock",
+    dateLabel: "Special Edition — Community Conversation",
+    title: "Flock Safety Cameras in Platte County",
+    image: specialEditionImage.url,
+    imageAlt:
+      "The Ross Report Special Edition — Community Conversation: Flock Safety Cameras in Platte County.",
+    caption:
+      "There has been a lot of conversation lately about Flock Safety cameras here in Platte County and across our region. Rather than make assumptions, I’d like to hear directly from the people who live and work in our community. This isn’t about taking sides — it’s about listening. Do you support Flock Safety cameras? Do you have concerns about privacy? If they’re used, what safeguards do you think should be in place? Please keep the conversation respectful. Every perspective matters, and I look forward to hearing from you. Let’s have a thoughtful community conversation.",
+    isSpecial: true,
+  },
+  {
     id: "recap-5",
     dateLabel: "Issue No. 5 — July 26 – August 1, 2026",
     title: "The Ross Report — Early Voting Is Underway",
