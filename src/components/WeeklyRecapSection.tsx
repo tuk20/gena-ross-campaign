@@ -1,4 +1,4 @@
-import { Calendar } from "lucide-react";
+import { Calendar, Sparkles } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +11,7 @@ import secondRecapImage from "@/assets/ross-report-week-2.png.asset.json";
 import thirdRecapImage from "@/assets/ross-report-week-3.png.asset.json";
 import fourthRecapImage from "@/assets/ross-report-week-4.png.asset.json";
 import fifthRecapImage from "@/assets/ross-report-week-5.png.asset.json";
+import specialEditionImage from "@/assets/RossReport_FlockCam.png.asset.json";
 
 interface Recap {
   id: string;
@@ -19,6 +20,7 @@ interface Recap {
   image: string;
   imageAlt: string;
   caption: string;
+  isSpecial?: boolean;
 }
 
 const recaps: Recap[] = [
