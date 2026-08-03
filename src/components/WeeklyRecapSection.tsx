@@ -26,6 +26,16 @@ interface Recap {
 
 const recaps: Recap[] = [
   {
+    id: "recap-6",
+    dateLabel: "Issue No. 6 — August 2–8, 2026",
+    title: "The Ross Report — Election Week Is Here",
+    image: sixthRecapImage.url,
+    imageAlt:
+      "The Ross Report Issue No. 6 — August 2-8, 2026 weekly newsletter from Dr. Gena L. Ross.",
+    caption:
+      "Election Week is here. No matter where you stand politically, I encourage every eligible voter to take time to research the candidates, learn about the issues, and make your voice heard on Tuesday, August 4. An informed community is a stronger community, and after Election Day, we are still neighbors working together to build an even better Platte County. This week’s Ross Report also highlights one of our community’s newest family destinations, the beautiful Castle Playground at Michael Gunn Park at Platte Meadows. Thank you for following The Ross Report throughout this primary season. Have a safe, blessed, and wonderful week!",
+  },
+  {
     id: "recap-special-flock",
     dateLabel: "Special Edition — Community Conversation",
     title: "Flock Safety Cameras in Platte County",
