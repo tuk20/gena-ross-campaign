@@ -9,7 +9,6 @@ const Header = () => {
     { href: "#about", label: "About" },
     { href: "#priorities", label: "Priorities" },
     { href: "#voting", label: "Vote" },
-    { href: "#news", label: "News" },
     { href: "#volunteer", label: "Volunteer" },
     { href: "#weekly-recap", label: "Weekly Recap" },
   ];
