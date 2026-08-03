@@ -1,4 +1,9 @@
 import { MessageCircle } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import flyerAsset from "@/assets/letsmanageit.png.asset.json";
 
 const ManageItWiselySection = () => {
