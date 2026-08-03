@@ -179,15 +179,16 @@ const WhyRunningSection = () => {
           </div>
         </div>
 
-        {/* Closing Section */}
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-6">
-            Leadership You Can Count On
-          </h3>
-          <p className="text-foreground/80 leading-relaxed text-lg">
-            I'm running to help strengthen trust in county leadership by focusing on cooperation, transparency, and practical problem-solving—not politics as usual. By keeping taxpayers in mind and working together, we can ensure Platte County remains a great place to live, work, and raise a family.
-          </p>
-        </div>
+          {/* Closing Section */}
+          <div className="bg-navy text-white rounded-lg p-8 md:p-10 grid md:grid-cols-[auto,1fr] gap-6 items-start">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold md:max-w-xs">
+              Leadership You Can Count On
+            </h3>
+            <p className="text-white/90 leading-relaxed text-lg">
+              I'm running to help strengthen trust in county leadership by focusing on cooperation, transparency, and practical problem-solving—not politics as usual. By keeping taxpayers in mind and working together, we can ensure Platte County remains a great place to live, work, and raise a family.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
