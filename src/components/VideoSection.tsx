@@ -5,14 +5,14 @@ const VideoSection = () => {
         <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="order-2 md:order-1">
             <p className="text-campaign-red font-semibold text-lg mb-2">
-              Hear From the Candidate
+              In Her Own Words
             </p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
               My Story
             </h2>
             <div className="w-24 h-1 bg-campaign-red mb-6"></div>
             <p className="text-foreground/80 text-lg leading-relaxed">
-              Hear directly from Dr. Gena L. Ross about why she's running for Platte County Presiding Commissioner.
+              Hear directly from Dr. Gena L. Ross about why she's running for Platte County Presiding Commissioner.&nbsp;
             </p>
           </div>
           <div className="order-1 md:order-2">
