@@ -42,13 +42,6 @@ const NewsSection = () => {
             </h2>
             <div className="w-24 h-1 bg-campaign-red mt-4"></div>
           </div>
-          <a
-            href="#news"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-white transition-colors duration-300 w-fit"
-          >
-            All Updates
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
 
         {/* Two Column Layout */}
