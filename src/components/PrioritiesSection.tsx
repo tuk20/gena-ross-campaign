@@ -110,6 +110,7 @@ const PrioritiesSection = () => {
             ))}
           </Accordion>
         </div>
+        </div>
       </div>
     </section>
   );

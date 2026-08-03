@@ -114,6 +114,7 @@ const VotingSection = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
     </section>
   );

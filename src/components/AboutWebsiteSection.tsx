@@ -51,6 +51,7 @@ const AboutWebsiteSection = () => {
             </div>
           ))}
         </div>
+        </div>
       </div>
     </section>
   );

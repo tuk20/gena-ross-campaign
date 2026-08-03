@@ -190,6 +190,7 @@ const WhyRunningSection = () => {
             I'm running to help strengthen trust in county leadership by focusing on cooperation, transparency, and practical problem-solving—not politics as usual. By keeping taxpayers in mind and working together, we can ensure Platte County remains a great place to live, work, and raise a family.
           </p>
         </div>
+        </div>
       </div>
     </section>
   );
