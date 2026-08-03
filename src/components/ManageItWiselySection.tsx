@@ -20,12 +20,33 @@ const ManageItWiselySection = () => {
 
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="flex justify-center">
-              <img
-                src={flyerAsset.url}
-                alt="Platte County Is Growing — Let's Manage It Wisely. Dr. Gena Ross for Presiding Commissioner."
-                className="w-full max-w-xl rounded-xl shadow-lg border border-border"
-                loading="lazy"
-              />
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="relative group cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-campaign-red rounded-2xl"
+                    aria-label="View full Let's Manage It Wisely flyer"
+                  >
+                    <div className="absolute -inset-3 bg-gradient-to-br from-campaign-red/20 to-navy/20 rounded-2xl blur-2xl group-hover:from-campaign-red/30 group-hover:to-navy/30 transition-all duration-500"></div>
+                    <img
+                      src={flyerAsset.url}
+                      alt="Platte County Is Growing — Let's Manage It Wisely. Dr. Gena Ross for Presiding Commissioner."
+                      className="relative w-full max-w-xl rounded-xl shadow-lg border border-border group-hover:scale-[1.02] transition-all duration-500"
+                      loading="lazy"
+                    />
+                    <span className="sr-only">Click to enlarge</span>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-3xl p-2 bg-background max-h-[90vh] overflow-y-auto">
+                  <div className="flex items-center justify-center min-h-0">
+                    <img
+                      src={flyerAsset.url}
+                      alt="Platte County Is Growing — Let's Manage It Wisely. Dr. Gena Ross for Presiding Commissioner."
+                      className="max-h-[85vh] max-w-full h-auto w-auto object-contain rounded-lg"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
 
             <div className="space-y-5">
