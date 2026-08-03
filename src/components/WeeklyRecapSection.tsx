@@ -102,17 +102,18 @@ const WeeklyRecapSection = () => {
   return (
     <section id="weekly-recap" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
             Weekly Recap
           </h2>
-          <div className="w-24 h-1 bg-campaign-red mx-auto mb-4"></div>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-campaign-red mb-4"></div>
+          <p className="text-foreground/70 max-w-3xl">
             Catch up on the latest from the campaign trail — swipe through new issues each week. Special editions are marked with a star badge.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
+
           <Carousel opts={{ loop: true, align: "start" }} className="relative">
             <CarouselContent>
               {recaps.map((recap) => (

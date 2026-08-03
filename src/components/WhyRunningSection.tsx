@@ -3,67 +3,65 @@ const WhyRunningSection = () => {
     <section id="why-running" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-          <p className="text-campaign-red font-semibold text-lg mb-2">
-            Serving people, taxpayers first, leadership.
-          </p>
-          <p className="text-foreground/70 text-base max-w-2xl mx-auto">
-            Responsible Leadership for Platte County.
-          </p>
-          <p className="text-foreground/70 text-base max-w-2xl mx-auto mt-1">
-            Accountability. Common sense.
-          </p>
-          <p className="text-foreground/70 text-base max-w-2xl mx-auto mt-1">
-            A county government that works.
-          </p>
-        </div>
+          {/* Header — left-aligned */}
+          <div className="mb-12">
+            <p className="text-campaign-red font-semibold text-lg mb-2">
+              Serving people, taxpayers first, leadership.
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
+              "Serving Platte County—Not for a Title, But for the People."
+            </h2>
+            <div className="w-24 h-1 bg-campaign-red mb-6"></div>
+            <p className="text-foreground/70 text-base max-w-3xl">
+              Responsible Leadership for Platte County. Accountability. Common sense. A county government that works.
+            </p>
+          </div>
 
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-            "Serving Platte County—Not for a Title, But for the People."
-          </h2>
-          <div className="w-24 h-1 bg-campaign-red mx-auto"></div>
-        </div>
+          {/* Two-column: message + leadership pledge */}
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-start mb-16">
+            <div className="space-y-6">
+              <p className="text-foreground/80 leading-relaxed text-lg">
+                I'm Dr. Gena L. Ross, and I'm running because I believe county government should work for the people—not the other way around.
+              </p>
 
-        <div className="max-w-4xl mx-auto space-y-6 mb-16">
-          <p className="text-foreground/80 leading-relaxed text-lg">
-            I'm Dr. Gena L. Ross, and I'm running because I believe county government should work for the people—not the other way around.
-          </p>
+              <p className="text-foreground/80 leading-relaxed text-lg">
+                Platte County is growing, and with that growth comes real challenges—higher costs, more traffic, and pressure on our communities.
+              </p>
 
-          <p className="text-foreground/80 leading-relaxed text-lg">
-            Platte County is growing, and with that growth comes real challenges—higher costs, more traffic, and pressure on our communities.
-          </p>
+              <p className="text-foreground/80 leading-relaxed text-lg">
+                This campaign is about putting people first, transparency first, and accountability first.
+              </p>
+            </div>
 
-          <p className="text-foreground/80 leading-relaxed text-lg">
-            We need leadership that:
-          </p>
-          <ul className="space-y-3 text-foreground text-lg font-semibold max-w-4xl mx-auto bg-muted/30 rounded-lg p-6">
-            <li className="flex items-start">
-              <span className="text-campaign-red mr-3 text-xl">•</span>
-              Respects taxpayers
-            </li>
-            <li className="flex items-start">
-              <span className="text-campaign-red mr-3 text-xl">•</span>
-              Plans for the future
-            </li>
-            <li className="flex items-start">
-              <span className="text-campaign-red mr-3 text-xl">•</span>
-              And makes decisions with the people—not without them
-            </li>
-          </ul>
+            <div>
+              <p className="text-foreground/80 leading-relaxed text-lg mb-4">
+                We need leadership that:
+              </p>
+              <ul className="space-y-3 text-foreground text-lg font-semibold bg-muted/30 rounded-lg p-6 border-l-4 border-campaign-red">
+                <li className="flex items-start">
+                  <span className="text-campaign-red mr-3 text-xl">•</span>
+                  Respects taxpayers
+                </li>
+                <li className="flex items-start">
+                  <span className="text-campaign-red mr-3 text-xl">•</span>
+                  Plans for the future
+                </li>
+                <li className="flex items-start">
+                  <span className="text-campaign-red mr-3 text-xl">•</span>
+                  And makes decisions with the people—not without them
+                </li>
+              </ul>
+            </div>
+          </div>
 
-          <p className="text-foreground/80 leading-relaxed text-lg">
-            This campaign is about putting people first, transparency first, and accountability first.
-          </p>
-        </div>
+          {/* Four Priorities Section */}
+          <div className="mb-16">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-10">
+              4 Priorities for Platte County
+            </h3>
 
-        {/* Four Priorities Section */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy text-center mb-10">
-            4 Priorities for Platte County
-          </h3>
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-start">
 
-          <div className="space-y-10">
             {/* Priority 1 */}
             <div className="bg-muted/30 rounded-lg p-6 md:p-8">
               <h4 className="font-heading text-xl md:text-2xl font-bold text-navy mb-3">
@@ -181,15 +179,16 @@ const WhyRunningSection = () => {
           </div>
         </div>
 
-        {/* Closing Section */}
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-6">
-            Leadership You Can Count On
-          </h3>
-          <p className="text-foreground/80 leading-relaxed text-lg">
-            I'm running to help strengthen trust in county leadership by focusing on cooperation, transparency, and practical problem-solving—not politics as usual. By keeping taxpayers in mind and working together, we can ensure Platte County remains a great place to live, work, and raise a family.
-          </p>
-        </div>
+          {/* Closing Section */}
+          <div className="bg-navy text-white rounded-lg p-8 md:p-10 grid md:grid-cols-[auto,1fr] gap-6 items-start">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold md:max-w-xs">
+              Leadership You Can Count On
+            </h3>
+            <p className="text-white/90 leading-relaxed text-lg">
+              I'm running to help strengthen trust in county leadership by focusing on cooperation, transparency, and practical problem-solving—not politics as usual. By keeping taxpayers in mind and working together, we can ensure Platte County remains a great place to live, work, and raise a family.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>

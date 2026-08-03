@@ -60,14 +60,16 @@ const AboutCandidateSection = () => {
   return (
     <section id="about" className="py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto">
+        <div className="mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
             About Dr. Gena L. Ross
           </h2>
-          <div className="w-24 h-1 bg-campaign-red mx-auto"></div>
+          <div className="w-24 h-1 bg-campaign-red"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-start">
+
           {/* Background */}
           <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border-l-4 border-navy">
             <h3 className="font-heading text-2xl font-semibold text-navy mb-4 flex items-center gap-3">
@@ -210,7 +212,9 @@ const AboutCandidateSection = () => {
             </p>
           </div>
         </div>
+        </div>
       </div>
+
     </section>
   );
 };
