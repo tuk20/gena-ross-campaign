@@ -116,10 +116,12 @@ const VotingSection = () => {
                 </Button>
               </a>
             </div>
+              </div>
+            </div>
           </div>
         </div>
-        </div>
       </div>
+
     </section>
   );
 };
