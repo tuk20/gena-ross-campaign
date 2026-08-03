@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-foreground py-8">
       <div className="container mx-auto px-4">
-        <div className="text-center">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center">
           <p className="font-heading text-lg text-white/90 mb-2">
             Dr. Gena L. Ross for Platte County Presiding Commissioner
           </p>
@@ -23,6 +24,7 @@ const Footer = () => {
           <p className="text-white/40 text-xs mt-6">
             Paid for by Dr. Gena L. Ross for Platte County — Treasurer Alisa Jones
           </p>
+        </div>
         </div>
       </div>
     </footer>

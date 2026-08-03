@@ -31,7 +31,8 @@ const NewsSection = () => {
   return (
     <section id="news" className="py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div>
             <p className="text-campaign-red font-semibold tracking-widest text-sm uppercase mb-2">
@@ -112,6 +113,7 @@ const NewsSection = () => {
               );
             })}
           </div>
+        </div>
         </div>
       </div>
     </section>

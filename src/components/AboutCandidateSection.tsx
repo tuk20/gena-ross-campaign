@@ -67,7 +67,7 @@ const AboutCandidateSection = () => {
           <div className="w-24 h-1 bg-campaign-red mx-auto"></div>
         </div>
 
-        <div className="max-w-5xl mx-auto space-y-8">
+        <div className="max-w-6xl mx-auto space-y-8">
           {/* Background */}
           <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border-l-4 border-navy">
             <h3 className="font-heading text-2xl font-semibold text-navy mb-4 flex items-center gap-3">

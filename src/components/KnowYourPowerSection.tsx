@@ -10,7 +10,8 @@ const KnowYourPowerSection = () => {
       className="py-16 md:py-24 bg-gradient-to-br from-navy/5 via-background to-campaign-red/5"
     >
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto px-2 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 bg-campaign-red/10 text-campaign-red px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
               <BookOpen className="w-4 h-4" />
@@ -76,6 +77,7 @@ const KnowYourPowerSection = () => {
             </Dialog>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

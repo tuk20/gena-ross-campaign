@@ -2,7 +2,8 @@ const VideoSection = () => {
   return (
     <section id="my-story" className="py-16 md:py-24 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="order-2 md:order-1">
             <p className="text-campaign-red font-semibold text-lg mb-2">
               In Her Own Words
@@ -29,6 +30,7 @@ const VideoSection = () => {
               </video>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

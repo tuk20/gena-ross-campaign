@@ -62,7 +62,8 @@ const PrioritiesSection = () => {
   return (
     <section id="priorities" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
             County Responsibilities & Administrative Priorities
           </h2>
@@ -108,6 +109,7 @@ const PrioritiesSection = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
         </div>
       </div>
     </section>

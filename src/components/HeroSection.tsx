@@ -5,7 +5,8 @@ const HeroSection = () => {
   return (
     <section id="home" className="pt-20 md:pt-24 bg-gradient-to-b from-muted to-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 animate-fade-in">
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4">
               Dr. Gena L. Ross
@@ -46,6 +47,7 @@ const HeroSection = () => {
               />
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

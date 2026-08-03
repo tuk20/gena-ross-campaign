@@ -112,7 +112,7 @@ const WeeklyRecapSection = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <Carousel opts={{ loop: true, align: "start" }} className="relative">
             <CarouselContent>
               {recaps.map((recap) => (
