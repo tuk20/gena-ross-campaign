@@ -82,35 +82,37 @@ const PrioritiesSection = () => {
               </div>
             </div>
 
+            {/* Right: responsibilities accordion */}
+            <div>
+              <Accordion type="single" collapsible className="space-y-4">
+                {responsibilities.map((item) => (
+                  <AccordionItem
+                    key={item.id}
+                    value={item.id}
+                    className="bg-card border border-border rounded-lg px-6 data-[state=open]:shadow-lg transition-all duration-300 hover:border-navy/30"
+                  >
+                    <AccordionTrigger className="hover:no-underline py-4 group">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-campaign-red/10 transition-colors duration-300">
+                          <item.icon className="w-5 h-5 text-navy group-hover:text-campaign-red transition-colors duration-300" />
+                        </div>
+                        <span className="font-heading text-lg font-medium text-foreground text-left group-hover:text-navy transition-colors duration-300">
+                          {item.title}
+                        </span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-4 pl-14">
+                      <p className="text-foreground/80 leading-relaxed animate-fade-in">
+                        {item.content}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </div>
 
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {responsibilities.map((item) => (
-              <AccordionItem
-                key={item.id}
-                value={item.id}
-                className="bg-card border border-border rounded-lg px-6 data-[state=open]:shadow-lg transition-all duration-300 hover:border-navy/30"
-              >
-                <AccordionTrigger className="hover:no-underline py-4 group">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-campaign-red/10 transition-colors duration-300">
-                      <item.icon className="w-5 h-5 text-navy group-hover:text-campaign-red transition-colors duration-300" />
-                    </div>
-                    <span className="font-heading text-lg font-medium text-foreground text-left group-hover:text-navy transition-colors duration-300">
-                      {item.title}
-                    </span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 pl-14">
-                  <p className="text-foreground/80 leading-relaxed animate-fade-in">
-                    {item.content}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-        </div>
       </div>
     </section>
   );
