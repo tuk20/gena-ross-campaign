@@ -1,8 +1,9 @@
-import { Calendar, FileText, Megaphone, Play } from "lucide-react";
+import { ArrowRight, Calendar, FileText, Megaphone, Play } from "lucide-react";
 
 const newsUpdates = [
   {
     id: "1",
+    category: "Filing",
     title: "Filing Announcement",
     content: "Dr. Gena L. Ross has officially filed with the Missouri Ethics Commission to run for Platte County Presiding Commissioner in 2026.",
     date: "2026",
@@ -10,6 +11,7 @@ const newsUpdates = [
   },
   {
     id: "2",
+    category: "Events",
     title: "Public Meetings & Events",
     content: "Stay tuned for upcoming community forums and public meetings where you can meet Dr. Ross and discuss issues important to Platte County.",
     date: null,
@@ -17,6 +19,7 @@ const newsUpdates = [
   },
   {
     id: "3",
+    category: "Campaign",
     title: "Campaign Administrative Notices",
     content: "For campaign updates and administrative information, please check back regularly or sign up as a volunteer to receive direct communications.",
     date: null,
@@ -28,79 +31,94 @@ const NewsSection = () => {
   return (
     <section id="news" className="py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-            News & Updates
-          </h2>
-          <div className="w-24 h-1 bg-campaign-red mx-auto"></div>
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div>
+            <p className="text-campaign-red font-semibold tracking-widest text-sm uppercase mb-2">
+              Stay Informed
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy">
+              News & Updates
+            </h2>
+            <div className="w-24 h-1 bg-campaign-red mt-4"></div>
+          </div>
+          <a
+            href="#news"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-white transition-colors duration-300 w-fit"
+          >
+            All Updates
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-6">
-          {/* Featured PSA Video */}
-          <div className="bg-background rounded-xl overflow-hidden shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
-            <div className="p-6 md:p-8">
-              <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 bg-campaign-red/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Play className="w-6 h-6 text-campaign-red" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                    <h3 className="font-heading text-xl font-semibold text-foreground">
-                      Public Service Announcement
-                    </h3>
-                    <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full w-fit">
-                      2026
-                    </span>
-                  </div>
-                  <p className="text-foreground/80 leading-relaxed">
-                    An important update from Dr. Gena L. Ross on her campaign for Platte County Presiding Commissioner.
-                  </p>
-                </div>
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
+          {/* Featured Video Card */}
+          <div className="bg-background rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
+            <div className="relative aspect-video bg-navy">
+              <video
+                controls
+                preload="metadata"
+                className="w-full h-full object-cover"
+                poster=""
+              >
+                <source src="/videos/drgena1.mov" type="video/quicktime" />
+                <source src="/videos/drgena1.mov" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute bottom-4 left-4">
+                <span className="inline-block bg-campaign-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded">
+                  Featured
+                </span>
               </div>
-              <div className="rounded-xl overflow-hidden bg-black">
-                <video
-                  controls
-                  preload="metadata"
-                  className="w-full aspect-video"
-                >
-                  <source src="/videos/drgena1.mov" type="video/quicktime" />
-                  <source src="/videos/drgena1.mov" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+            </div>
+            <div className="p-6">
+              <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
+                My Story — Why I'm Running
+              </h3>
+              <p className="text-foreground/70">
+                Watch Dr. Gena L. Ross share her vision for Platte County.
+              </p>
             </div>
           </div>
 
-          {newsUpdates.map((update) => {
-            const IconComponent = update.icon;
-            return (
-              <div
-                key={update.id}
-                className="bg-background rounded-xl p-6 md:p-8 shadow-sm border border-border hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-campaign-red/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <IconComponent className="w-6 h-6 text-campaign-red" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                      <h3 className="font-heading text-xl font-semibold text-foreground">
+          {/* News Items List */}
+          <div className="space-y-0 divide-y divide-border bg-background rounded-2xl border border-border shadow-sm">
+            {newsUpdates.map((update) => {
+              const IconComponent = update.icon;
+              return (
+                <div
+                  key={update.id}
+                  className="p-6 md:p-8 hover:bg-muted/30 transition-colors duration-300"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-campaign-red/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="w-6 h-6 text-campaign-red" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-3 mb-2">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-navy/10 text-navy">
+                          {update.category}
+                        </span>
+                        {update.date && (
+                          <span className="text-sm text-muted-foreground flex items-center gap-1.5">
+                            <Calendar className="w-3.5 h-3.5" />
+                            {update.date}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
                         {update.title}
                       </h3>
-                      {update.date && (
-                        <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full w-fit">
-                          {update.date}
-                        </span>
-                      )}
+                      <p className="text-foreground/70 text-sm leading-relaxed">
+                        {update.content}
+                      </p>
                     </div>
-                    <p className="text-foreground/80 leading-relaxed">
-                      {update.content}
-                    </p>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
