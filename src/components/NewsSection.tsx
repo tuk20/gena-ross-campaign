@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, FileText, Megaphone, Play } from "lucide-react";
+import { Calendar, FileText, Megaphone, Play } from "lucide-react";
 
 const newsUpdates = [
   {
