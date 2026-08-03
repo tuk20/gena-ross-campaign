@@ -33,7 +33,7 @@ const VolunteerAskPopup = () => {
           <img
             src={ballotAsset.url}
             alt="Sample ballot showing Gena L. Ross listed first for Presiding Commissioner"
-            className="w-full max-h-48 md:max-h-none h-auto object-contain bg-cream"
+            className="w-full max-h-48 md:max-h-[70vh] h-auto object-contain bg-cream"
           />
 
           <div className="p-5 md:p-6 text-center flex flex-col justify-center">
