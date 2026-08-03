@@ -97,12 +97,14 @@ const LeadershipCommitmentSection = () => {
                     <span className="sr-only">Click to enlarge</span>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-3xl p-2 bg-background">
-                  <img
-                    src={flyerAsset.url}
-                    alt="Together, We Build a Stronger Platte County — Dr. Gena Ross for Presiding Commissioner"
-                    className="w-full h-auto rounded-lg"
-                  />
+                <DialogContent className="max-w-3xl p-2 bg-background max-h-[90vh] overflow-y-auto">
+                  <div className="flex items-center justify-center min-h-0">
+                    <img
+                      src={flyerAsset.url}
+                      alt="Together, We Build a Stronger Platte County — Dr. Gena Ross for Presiding Commissioner"
+                      className="max-h-[85vh] max-w-full h-auto w-auto object-contain rounded-lg"
+                    />
+                  </div>
                 </DialogContent>
               </Dialog>
             </div>

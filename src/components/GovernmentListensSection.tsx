@@ -68,12 +68,14 @@ const GovernmentListensSection = () => {
                     <span className="sr-only">Click to enlarge</span>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-3xl p-2 bg-background">
-                  <img
-                    src={flyerImage}
-                    alt="Dr. Gena L. Ross — Talk to me. Platte County Presiding Commissioner campaign flyer."
-                    className="w-full h-auto rounded-lg"
-                  />
+                <DialogContent className="max-w-3xl p-2 bg-background max-h-[90vh] overflow-y-auto">
+                  <div className="flex items-center justify-center min-h-0">
+                    <img
+                      src={flyerImage}
+                      alt="Dr. Gena L. Ross — Talk to me. Platte County Presiding Commissioner campaign flyer."
+                      className="max-h-[85vh] max-w-full h-auto w-auto object-contain rounded-lg"
+                    />
+                  </div>
                 </DialogContent>
               </Dialog>
             </div>
