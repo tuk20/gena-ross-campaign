@@ -2,7 +2,8 @@ const WhyRunningSection = () => {
   return (
     <section id="why-running" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
           <p className="text-campaign-red font-semibold text-lg mb-2">
             Serving people, taxpayers first, leadership.
           </p>
