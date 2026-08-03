@@ -6,6 +6,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import firstRecapImage from "@/assets/ross-report-week-1.png.asset.json";
 import secondRecapImage from "@/assets/ross-report-week-2.png.asset.json";
 import thirdRecapImage from "@/assets/ross-report-week-3.png.asset.json";
@@ -102,17 +107,23 @@ const WeeklyRecapSection = () => {
   return (
     <section id="weekly-recap" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-            Weekly Recap
-          </h2>
-          <div className="w-24 h-1 bg-campaign-red mx-auto mb-4"></div>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Catch up on the latest from the campaign trail — swipe through new issues each week. Special editions are marked with a star badge.
-          </p>
-        </div>
-
         <div className="max-w-6xl mx-auto">
+          {/* Header — left-aligned */}
+          <div className="mb-12">
+            <p className="text-campaign-red font-semibold text-lg mb-2">
+              From the Campaign Trail
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
+              Weekly Recap
+            </h2>
+            <div className="w-24 h-1 bg-campaign-red mb-6"></div>
+            <p className="text-foreground/80 text-lg leading-relaxed max-w-3xl">
+              Catch up on the latest updates from Dr. Gena L. Ross — each issue
+              shares campaign highlights, community spotlights, and important
+              reminders for Platte County residents.
+            </p>
+          </div>
+
           <Carousel opts={{ loop: true, align: "start" }} className="relative">
             <CarouselContent>
               {recaps.map((recap) => (
@@ -124,41 +135,69 @@ const WeeklyRecapSection = () => {
                         : "border border-border"
                     }`}
                   >
-                    <div className="p-6 md:p-8">
-                      <div className="flex flex-wrap items-center gap-2 mb-3">
-                        {recap.isSpecial ? (
-                          <>
-                            <Sparkles className="w-4 h-4 text-campaign-red" />
-                            <span className="text-sm font-bold text-campaign-red uppercase tracking-wide">
-                              {recap.dateLabel}
-                            </span>
-                            <span className="inline-flex items-center rounded-full bg-campaign-red px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
-                              Special Edition
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <Calendar className="w-4 h-4 text-campaign-red" />
-                            <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
-                              {recap.dateLabel}
-                            </span>
-                          </>
-                        )}
+                    <div className="p-6 md:p-8 lg:p-10">
+                      <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+                        {/* Text content */}
+                        <div className="order-2 md:order-1 space-y-5">
+                          <div className="flex flex-wrap items-center gap-2">
+                            {recap.isSpecial ? (
+                              <>
+                                <Sparkles className="w-4 h-4 text-campaign-red" />
+                                <span className="text-sm font-bold text-campaign-red uppercase tracking-wide">
+                                  {recap.dateLabel}
+                                </span>
+                                <span className="inline-flex items-center rounded-full bg-campaign-red px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
+                                  Special Edition
+                                </span>
+                              </>
+                            ) : (
+                              <>
+                                <Calendar className="w-4 h-4 text-campaign-red" />
+                                <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
+                                  {recap.dateLabel}
+                                </span>
+                              </>
+                            )}
+                          </div>
+
+                          <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy">
+                            {recap.title}
+                          </h3>
+
+                          <p className="text-foreground/80 text-lg leading-relaxed">
+                            {recap.caption}
+                          </p>
+                        </div>
+
+                        {/* Image */}
+                        <div className="order-1 md:order-2 flex justify-center md:justify-end">
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <button
+                                type="button"
+                                className="relative group cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-campaign-red rounded-2xl"
+                                aria-label={`View full ${recap.title} flyer`}
+                              >
+                                <div className="absolute -inset-3 bg-gradient-to-br from-campaign-red/20 to-navy/20 rounded-2xl blur-2xl group-hover:from-campaign-red/30 group-hover:to-navy/30 transition-all duration-500"></div>
+                                <img
+                                  src={recap.image}
+                                  alt={recap.imageAlt}
+                                  loading="lazy"
+                                  className="relative w-full max-w-md rounded-2xl shadow-2xl border border-border group-hover:scale-[1.02] transition-all duration-500"
+                                />
+                                <span className="sr-only">Click to enlarge</span>
+                              </button>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-3xl p-2 bg-background">
+                              <img
+                                src={recap.image}
+                                alt={recap.imageAlt}
+                                className="w-full h-auto rounded-lg"
+                              />
+                            </DialogContent>
+                          </Dialog>
+                        </div>
                       </div>
-                      <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-5">
-                        {recap.title}
-                      </h3>
-                      <div className="rounded-lg overflow-hidden border border-border mb-5 bg-muted/40">
-                        <img
-                          src={recap.image}
-                          alt={recap.imageAlt}
-                          className="w-full h-auto object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                      <p className="text-foreground/80 leading-relaxed">
-                        {recap.caption}
-                      </p>
                     </div>
                   </article>
                 </CarouselItem>
