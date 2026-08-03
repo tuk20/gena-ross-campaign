@@ -31,6 +31,7 @@ const VideoSection = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
     </section>
   );
