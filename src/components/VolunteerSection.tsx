@@ -5,7 +5,7 @@ const VolunteerSection = () => {
   return (
     <section id="volunteer" className="py-16 md:py-24 bg-navy">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <div className="w-16 h-16 bg-campaign-red rounded-full flex items-center justify-center mx-auto mb-4">
               <Heart className="w-8 h-8 text-white" />
