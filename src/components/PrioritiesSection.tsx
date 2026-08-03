@@ -63,25 +63,25 @@ const PrioritiesSection = () => {
     <section id="priorities" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-            County Responsibilities & Administrative Priorities
-          </h2>
-          <div className="w-24 h-1 bg-campaign-red mx-auto mb-6"></div>
-        </div>
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-start">
+            {/* Left: heading + role explainer */}
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
+                County Responsibilities & Administrative Priorities
+              </h2>
+              <div className="w-24 h-1 bg-campaign-red mb-6"></div>
+              <div className="bg-muted rounded-xl p-6 md:p-8">
+                <h3 className="font-heading text-xl font-semibold text-navy mb-3">
+                  Understanding the Role
+                </h3>
+                <p className="text-foreground/80 leading-relaxed">
+                  The Presiding Commissioner oversees county administration, works with
+                  elected officials and department heads, and participates in decisions
+                  that affect services, budgeting, and development throughout Platte County.
+                </p>
+              </div>
+            </div>
 
-        <div className="max-w-3xl mx-auto mb-12">
-          <div className="bg-muted rounded-xl p-6 md:p-8">
-            <h3 className="font-heading text-xl font-semibold text-navy mb-3">
-              Understanding the Role
-            </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              The Presiding Commissioner oversees county administration, works with 
-              elected officials and department heads, and participates in decisions 
-              that affect services, budgeting, and development throughout Platte County.
-            </p>
-          </div>
-        </div>
 
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
