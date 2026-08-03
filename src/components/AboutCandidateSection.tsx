@@ -212,7 +212,9 @@ const AboutCandidateSection = () => {
             </p>
           </div>
         </div>
+        </div>
       </div>
+
     </section>
   );
 };
