@@ -9,7 +9,6 @@ import AboutCandidateSection from "@/components/AboutCandidateSection";
 import PrioritiesSection from "@/components/PrioritiesSection";
 import VotingSection from "@/components/VotingSection";
 import KnowYourPowerSection from "@/components/KnowYourPowerSection";
-
 import VolunteerSection from "@/components/VolunteerSection";
 import Footer from "@/components/Footer";
 import LeadershipCommitmentSection from "@/components/LeadershipCommitmentSection";
