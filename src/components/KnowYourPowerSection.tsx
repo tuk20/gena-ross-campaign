@@ -41,11 +41,13 @@ const KnowYourPowerSection = () => {
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-3xl p-2 bg-background max-h-[90vh] overflow-y-auto">
-                <img
-                  src={knowYourPowerFlyer.url}
-                  alt="Know Your Power. Please Vote. 2026 Primary Election Ballot — Four important Missouri constitutional amendments explained by Dr. Gena L. Ross."
-                  className="w-full h-auto rounded-lg"
-                />
+                <div className="flex items-center justify-center min-h-0">
+                  <img
+                    src={knowYourPowerFlyer.url}
+                    alt="Know Your Power. Please Vote. 2026 Primary Election Ballot — Four important Missouri constitutional amendments explained by Dr. Gena L. Ross."
+                    className="max-h-[85vh] max-w-full h-auto w-auto object-contain rounded-lg"
+                  />
+                </div>
               </DialogContent>
             </Dialog>
           </div>
@@ -68,11 +70,13 @@ const KnowYourPowerSection = () => {
                 </button>
               </DialogTrigger>
               <DialogContent className="max-w-3xl p-2 bg-background max-h-[90vh] overflow-y-auto">
-                <img
-                  src={knowYourPowerFlyer.url}
-                  alt="Know Your Power. Please Vote. 2026 Primary Election Ballot — Four important Missouri constitutional amendments explained by Dr. Gena L. Ross."
-                  className="w-full h-auto rounded-lg"
-                />
+                <div className="flex items-center justify-center min-h-0">
+                  <img
+                    src={knowYourPowerFlyer.url}
+                    alt="Know Your Power. Please Vote. 2026 Primary Election Ballot — Four important Missouri constitutional amendments explained by Dr. Gena L. Ross."
+                    className="max-h-[85vh] max-w-full h-auto w-auto object-contain rounded-lg"
+                  />
+                </div>
               </DialogContent>
             </Dialog>
           </div>
