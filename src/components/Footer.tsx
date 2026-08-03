@@ -25,6 +25,7 @@ const Footer = () => {
             Paid for by Dr. Gena L. Ross for Platte County — Treasurer Alisa Jones
           </p>
         </div>
+        </div>
       </div>
     </footer>
   );

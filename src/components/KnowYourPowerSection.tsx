@@ -78,6 +78,7 @@ const KnowYourPowerSection = () => {
           </div>
         </div>
       </div>
+      </div>
     </section>
   );
 };
