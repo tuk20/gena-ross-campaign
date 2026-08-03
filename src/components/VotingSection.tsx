@@ -39,51 +39,47 @@ const VotingSection = () => {
     <section id="voting" className="py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-start">
-            {/* Left: heading + resources */}
-            <div>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-                Where to Vote
-              </h2>
-              <div className="w-24 h-1 bg-campaign-red mb-6"></div>
-              <p className="text-foreground/80 mb-8">
-                Make your voice heard in Platte County. Find everything you need to participate in the 2026 Missouri elections.
-              </p>
+          <div className="text-center mb-12">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
+            Where to Vote
+          </h2>
+          <div className="w-24 h-1 bg-campaign-red mx-auto mb-6"></div>
+          <p className="text-foreground/80 max-w-2xl mx-auto">
+            Make your voice heard in Platte County. Find everything you need to participate in the 2026 Missouri elections.
+          </p>
+        </div>
 
-              <div className="space-y-4">
-                {votingResources.map((resource, index) => (
-                  <div
-                    key={index}
-                    className="bg-background rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex items-start gap-4"
-                  >
-                    <div className="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-campaign-red/10 transition-colors duration-300">
-                      <resource.icon className="w-6 h-6 text-navy group-hover:text-campaign-red transition-colors duration-300" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-xl font-semibold text-navy mb-1 group-hover:text-campaign-red transition-colors duration-300">
-                        {resource.title}
-                      </h3>
-                      <p className="text-foreground/70 text-sm mb-3">
-                        {resource.description}
-                      </p>
-                      <a
-                        href={resource.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-campaign-red hover:text-red-campaign-hover font-medium text-sm transition-colors duration-300"
-                      >
-                        {resource.linkText}
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
-                ))}
+        {/* Voting Resources Cards */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          {votingResources.map((resource, index) => (
+            <div
+              key={index}
+              className="bg-background rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+            >
+              <div className="w-14 h-14 bg-navy/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-campaign-red/10 transition-colors duration-300">
+                <resource.icon className="w-7 h-7 text-navy group-hover:text-campaign-red transition-colors duration-300" />
               </div>
+              <h3 className="font-heading text-xl font-semibold text-navy mb-2 group-hover:text-campaign-red transition-colors duration-300">
+                {resource.title}
+              </h3>
+              <p className="text-foreground/70 text-sm mb-4">
+                {resource.description}
+              </p>
+              <a
+                href={resource.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-campaign-red hover:text-red-campaign-hover font-medium text-sm transition-colors duration-300"
+              >
+                {resource.linkText}
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
+          ))}
+        </div>
 
-            {/* Right: important dates */}
-            <div>
-
+        {/* Important Dates */}
+        <div className="max-w-2xl mx-auto">
           <div className="bg-background rounded-xl p-8 shadow-sm">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-campaign-red/10 rounded-full flex items-center justify-center">
@@ -116,12 +112,10 @@ const VotingSection = () => {
                 </Button>
               </a>
             </div>
-              </div>
-            </div>
           </div>
         </div>
+        </div>
       </div>
-
     </section>
   );
 };
