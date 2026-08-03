@@ -1,4 +1,4 @@
-import { Calendar, Sparkles } from "lucide-react";
+import { Calendar, Sparkles, Newspaper, Vote, MapPin, Heart } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -98,78 +98,176 @@ const recaps: Recap[] = [
   },
 ];
 
+const topics = [
+  {
+    icon: Newspaper,
+    title: "Community Updates",
+    description:
+      "Positive, factual updates about what’s happening across Platte County.",
+  },
+  {
+    icon: Vote,
+    title: "Election Information",
+    description:
+      "Reminders about key dates, voting locations, and what’s on the ballot.",
+  },
+  {
+    icon: MapPin,
+    title: "Local Spotlights",
+    description:
+      "Recognizing the people, places, and businesses that make our county special.",
+  },
+  {
+    icon: Heart,
+    title: "Resident Engagement",
+    description:
+      "Opportunities to share your thoughts and be part of the conversation.",
+  },
+];
+
 const WeeklyRecapSection = () => {
   return (
     <section id="weekly-recap" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
-            Weekly Recap
-          </h2>
-          <div className="w-24 h-1 bg-campaign-red mx-auto mb-4"></div>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Catch up on the latest from the campaign trail — swipe through new issues each week. Special editions are marked with a star badge.
-          </p>
-        </div>
-
         <div className="max-w-6xl mx-auto">
-          <Carousel opts={{ loop: true, align: "start" }} className="relative">
-            <CarouselContent>
-              {recaps.map((recap) => (
-                <CarouselItem key={recap.id}>
-                  <article
-                    className={`bg-background rounded-xl overflow-hidden shadow-sm h-full ${
-                      recap.isSpecial
-                        ? "border-2 border-campaign-red ring-4 ring-campaign-red/10"
-                        : "border border-border"
-                    }`}
-                  >
-                    <div className="p-6 md:p-8">
-                      <div className="flex flex-wrap items-center gap-2 mb-3">
-                        {recap.isSpecial ? (
-                          <>
-                            <Sparkles className="w-4 h-4 text-campaign-red" />
-                            <span className="text-sm font-bold text-campaign-red uppercase tracking-wide">
-                              {recap.dateLabel}
-                            </span>
-                            <span className="inline-flex items-center rounded-full bg-campaign-red px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
-                              Special Edition
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <Calendar className="w-4 h-4 text-campaign-red" />
-                            <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
-                              {recap.dateLabel}
-                            </span>
-                          </>
-                        )}
-                      </div>
-                      <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-5">
-                        {recap.title}
-                      </h3>
-                      <div className="rounded-lg overflow-hidden border border-border mb-5 bg-muted/40">
-                        <img
-                          src={recap.image}
-                          alt={recap.imageAlt}
-                          className="w-full h-auto object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                      <p className="text-foreground/80 leading-relaxed">
-                        {recap.caption}
-                      </p>
-                    </div>
-                  </article>
-                </CarouselItem>
+          {/* Header — left-aligned */}
+          <div className="mb-12">
+            <p className="text-campaign-red font-semibold text-lg mb-2">
+              The Ross Report
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">
+              Weekly Recap
+            </h2>
+            <div className="w-24 h-1 bg-campaign-red mb-6"></div>
+            <p className="text-foreground/80 text-lg leading-relaxed max-w-3xl">
+              Catch up on the latest from the campaign trail — new issues posted each week. Special editions are marked with a star badge.
+            </p>
+          </div>
+
+          {/* Two-column: message + carousel */}
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-start mb-12">
+            <div className="space-y-6">
+              <p className="text-foreground/80 text-lg leading-relaxed">
+                Every week, The Ross Report shares what I’m hearing, learning, and working on as I travel across Platte County.
+              </p>
+
+              <p className="text-foreground/80 text-lg leading-relaxed">
+                My goal is simple: keep our community informed, encourage civic engagement, and recognize the people who make Platte County a wonderful place to live, work, and raise a family.
+              </p>
+
+              <div className="bg-muted/30 rounded-lg p-6 border-l-4 border-campaign-red">
+                <h3 className="font-heading text-xl md:text-2xl font-bold text-navy mb-3">
+                  Stay Informed, Stay Engaged
+                </h3>
+                <p className="text-foreground/80 text-lg leading-relaxed">
+                  Swipe through the latest issues below to read updates, community spotlights, and important election reminders.
+                </p>
+              </div>
+
+              <blockquote className="border-l-4 border-campaign-red pl-6 py-2">
+                <p className="text-navy font-heading text-xl font-bold italic">
+                  "An informed community is a stronger community."
+                </p>
+              </blockquote>
+            </div>
+
+            <div className="relative">
+              <Carousel opts={{ loop: true, align: "start" }} className="relative">
+                <CarouselContent>
+                  {recaps.map((recap) => (
+                    <CarouselItem key={recap.id}>
+                      <article
+                        className={`bg-background rounded-xl overflow-hidden shadow-sm h-full ${
+                          recap.isSpecial
+                            ? "border-2 border-campaign-red ring-4 ring-campaign-red/10"
+                            : "border border-border"
+                        }`}
+                      >
+                        <div className="p-6 md:p-8">
+                          <div className="flex flex-wrap items-center gap-2 mb-3">
+                            {recap.isSpecial ? (
+                              <>
+                                <Sparkles className="w-4 h-4 text-campaign-red" />
+                                <span className="text-sm font-bold text-campaign-red uppercase tracking-wide">
+                                  {recap.dateLabel}
+                                </span>
+                                <span className="inline-flex items-center rounded-full bg-campaign-red px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
+                                  Special Edition
+                                </span>
+                              </>
+                            ) : (
+                              <>
+                                <Calendar className="w-4 h-4 text-campaign-red" />
+                                <span className="text-sm font-medium text-campaign-red uppercase tracking-wide">
+                                  {recap.dateLabel}
+                                </span>
+                              </>
+                            )}
+                          </div>
+                          <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-5">
+                            {recap.title}
+                          </h3>
+                          <div className="rounded-lg overflow-hidden border border-border mb-5 bg-muted/40">
+                            <img
+                              src={recap.image}
+                              alt={recap.imageAlt}
+                              className="w-full h-auto object-contain"
+                              loading="lazy"
+                            />
+                          </div>
+                          <p className="text-foreground/80 leading-relaxed">
+                            {recap.caption}
+                          </p>
+                        </div>
+                      </article>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden sm:flex -left-4 md:-left-12 bg-background border-campaign-red text-campaign-red hover:bg-campaign-red hover:text-white" />
+                <CarouselNext className="hidden sm:flex -right-4 md:-right-12 bg-background border-campaign-red text-campaign-red hover:bg-campaign-red hover:text-white" />
+              </Carousel>
+              <p className="text-center text-sm text-foreground/60 mt-4 sm:hidden">
+                Swipe to see more issues →
+              </p>
+            </div>
+          </div>
+
+          {/* Topics */}
+          <div className="mb-12">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-8">
+              What You’ll Find in The Ross Report
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {topics.map(({ icon: Icon, title, description }) => (
+                <div
+                  key={title}
+                  className="bg-muted/30 rounded-lg p-6 flex gap-4"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-campaign-red/10 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-campaign-red" />
+                  </div>
+                  <div>
+                    <h4 className="font-heading text-lg font-bold text-navy mb-1">
+                      {title}
+                    </h4>
+                    <p className="text-foreground/80 leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
+                </div>
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex -left-4 md:-left-12 bg-background border-campaign-red text-campaign-red hover:bg-campaign-red hover:text-white" />
-            <CarouselNext className="hidden sm:flex -right-4 md:-right-12 bg-background border-campaign-red text-campaign-red hover:bg-campaign-red hover:text-white" />
-          </Carousel>
-          <p className="text-center text-sm text-foreground/60 mt-4 sm:hidden">
-            Swipe to see more issues →
-          </p>
+            </div>
+          </div>
+
+          {/* Closing */}
+          <div className="bg-navy text-white rounded-lg p-8 md:p-10">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">
+              Thank You for Staying Informed
+            </h3>
+            <p className="text-white/90 text-lg leading-relaxed">
+              Whether you read every issue or just check in from time to time, your engagement matters. Together, we can build a stronger, more informed Platte County.
+            </p>
+          </div>
         </div>
       </div>
     </section>
