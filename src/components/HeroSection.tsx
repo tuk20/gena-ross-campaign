@@ -9,11 +9,8 @@ const HeroSection = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 animate-fade-in">
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4">
-              Dr. Gena L. Ross
+              Dr. Gena L. Ross for Platte County Presiding Commissioner
             </h1>
-            <p className="font-heading text-xl md:text-2xl text-campaign-red font-medium mb-2">
-              for Platte County Presiding Commissioner
-            </p>
             <p className="text-muted-foreground text-lg mb-6">
               Informational Website for the 2026 Election
             </p>
